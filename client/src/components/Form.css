@@ -1,0 +1,14 @@
+::-webkit-input-placeholder {
+	/* Change placeholder styles.*/
+	color: white !important;
+}
+
+.form-control {
+	background-color: #cdb2ab !important;
+	padding: 25px;
+}
+
+.submit {
+	background-color: #a37774;
+	border: none;
+}
