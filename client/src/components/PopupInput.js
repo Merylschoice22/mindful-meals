@@ -1,4 +1,5 @@
 import React from "react";
+import "./components/PopupInput.css";
 
 function PopupInput(props) {
   return props.trigger ? (

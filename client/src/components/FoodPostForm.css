@@ -1,0 +1,9 @@
+.post-input > .post-label {
+  padding: 50px;
+  height: 50px;
+  width: 300px !important;
+}
+
+.share-btn {
+  background-color: #a37774 !important;
+}
