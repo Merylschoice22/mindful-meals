@@ -4,8 +4,10 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
-import Navbar from "./components/Navbar";
+import "./components/Navbar";
 import "./components/Navbar.css";
+import CreateFoodPost from "./CreateFoodPost";
+import "./components/CreateFoodPost.css";
 
 const App = () => {
   return (
@@ -20,19 +22,18 @@ const App = () => {
         </header>
         <Switch>
           <Route path="/" component={FoodFeed} />
-		  <Route path="/login" component = {Login} />
-		  <Route path="/register" component = {Register} />
-		  <Route path="/navbar" component={Navbar} />
-          <Route path="/" component={} />
-          <Route path="/" component={} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/navbar" component={Navbar} />
+          <Route path="/post" component={CreateFoodPost} />
+          {/* <Route path="/" component={} /> */}
         </Switch>
         <footer>
           <h6>Footer text</h6>
         </footer>
       </div>
     </BrowserRouter>
-  ); 
-
-}
+  );
+};
 
 export default App;
