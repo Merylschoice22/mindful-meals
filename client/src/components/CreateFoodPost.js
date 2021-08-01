@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import PopupInput from "./PopupInput";
+import FoodPostForm from "./FoodPostForm";
 
 function CreateFoodPost(props) {
   const [inputPopup, setInputPopup] = useState(false);
@@ -19,10 +20,9 @@ function CreateFoodPost(props) {
           />
         </div>
         <br></br>
-        <PopupInput
-          trigger={inputPopup}
-          setTrigger={setInputPopup}
-        ></PopupInput>
+        <PopupInput trigger={inputPopup} setTrigger={setInputPopup}>
+          <FoodPostForm />
+        </PopupInput>
         <hr />
       </div>
     </div>
