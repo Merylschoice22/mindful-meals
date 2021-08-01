@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 
 function FoodPostCard() {
+  const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div className="post">
       <div className="post-wrapper">
@@ -29,7 +31,16 @@ function FoodPostCard() {
           ></img>
         </div>
         <div className="going-bottom">
-          <button className="going-post-food-btn">Going!</button>
+          <button
+            className="going-post-food-btn"
+            onClick={() => setButtonPopup(true)}
+          >
+            Going!
+          </button>
+          <ReservedPopup
+            trigger={buttonPopup}
+            setTrigger={setButtonPopup}
+          ></ReservedPopup>
           <br></br>
         </div>
       </div>
