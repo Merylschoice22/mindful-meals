@@ -1,6 +1,8 @@
 import React from "react";
-import "./App.css";
+
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const App = () => {
   return (
@@ -15,7 +17,9 @@ const App = () => {
         </header>
         <Switch>
           <Route path="/" component={FoodFeed} />
-          <Route path="/" component={} />
+		  <Route path="/login" component = {Login} />
+		  <Route path="/register" component = {Register} />
+		  <Route path="/" component={} />
           <Route path="/" component={} />
           <Route path="/" component={} />
         </Switch>
@@ -25,6 +29,7 @@ const App = () => {
       </div>
     </BrowserRouter>
   ); 
+
 }
 
 export default App;
