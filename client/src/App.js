@@ -2,9 +2,8 @@ import React from "react";
 
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/Login";
-import Navbar from "./components/Navbar";
 import Register from "./components/Register";
-import "./components/Navbar";
+import Navbar from "./components/Navbar";
 import "./components/Navbar.css";
 import CreateFoodPost from "./components/CreateFoodPost";
 import "./components/CreateFoodPost.css";
