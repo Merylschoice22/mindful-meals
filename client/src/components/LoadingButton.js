@@ -1,7 +1,9 @@
 import React from "react";
 
 function LoadingButton() {
-  return <div></div>;
+  <div className="load-posts">
+    <button className="load-button">Load More</button>
+  </div>;
 }
 
 export default LoadingButton;
