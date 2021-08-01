@@ -4,6 +4,7 @@ import PopupInput from "./PopupInput";
 import FoodPostForm from "./FoodPostForm";
 import "./components/CreateFoodPost.css";
 
+
 function CreateFoodPost(props) {
   const [inputPopup, setInputPopup] = useState(false);
   return (
