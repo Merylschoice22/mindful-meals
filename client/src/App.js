@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/" component={FoodFeed} />
 		  <Route path="/login" component = {Login} />
 		  <Route path="/register" component = {Register} />
-		  <Route path="/" component={Navbar} />
+		  <Route path="/navbar" component={Navbar} />
           <Route path="/" component={} />
           <Route path="/" component={} />
         </Switch>
