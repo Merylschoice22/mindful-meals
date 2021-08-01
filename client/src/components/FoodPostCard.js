@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./components/FoodPostCard.css";
 
 function FoodPostCard() {
   const [buttonPopup, setButtonPopup] = useState(false);
