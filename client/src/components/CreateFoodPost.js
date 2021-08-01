@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
+import PopupInput from "./PopupInput";
 
-function CreateFoodPost() {
+function CreateFoodPost(props) {
+  const [inputPopup, setInputPopup] = useState(false);
   return (
     <div className="make-food-post-popup">
       <div className="make-food-post-first-section">
@@ -9,9 +12,17 @@ function CreateFoodPost() {
         </div>
         <br></br>
         <div className="second-section-input">
-          <input type="text" placeholder="What food are you giving away?" />
+          <input
+            type="text"
+            placeholder="What food are you giving away?"
+            onClick={() => setInputPopup(true)}
+          />
         </div>
         <br></br>
+        <PopupInput
+          trigger={inputPopup}
+          setTrigger={setInputPopup}
+        ></PopupInput>
         <hr />
       </div>
     </div>
