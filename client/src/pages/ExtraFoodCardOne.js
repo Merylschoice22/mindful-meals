@@ -13,24 +13,23 @@ function ExtraFoodCardOne() {
           <div className="post-top-left">
             <img
               className="post-profile-img"
-              src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
+              src="https://cdn.dribbble.com/users/77224/screenshots/5090693/wip_dribbble2.jpg?compress=1&resize=800x600"
               alt=""
             ></img>
-            <span className="post-username">Frida Amor</span>
+            <span className="post-username">Maria Gonzales</span>
           </div>
           <div className="post-top-right">
-            <span className="post-location">Gracia</span>
+            <span className="post-location">Eixample</span>
           </div>
         </div>
         <div className="post-center">
           <span className="post-description-title">Hey there!</span>
           <p className="post-description">
-            I would like to give away a vegan carrot cake that I baked this
-            morning. Enough for four people :)
+            I have a leftover cheese pizza from a party. Enough for two people
           </p>
           <img
             className="post-image"
-            src="https://img.delicious.com.au/Kl8Gm8gM/del/2017/05/spiced-carrot-cake-with-labneh-icing-46402-2.jpg"
+            src="https://www.macheesmo.com/wp-content/uploads/2020/04/Homemade-Trial-Pizza-Dough-8-1008x700.jpg"
           ></img>
         </div>
         <div className="going-bottom">
