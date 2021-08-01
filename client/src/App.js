@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import "./components/Navbar";
 import "./components/Navbar.css";
-import CreateFoodPost from "./CreateFoodPost";
+import CreateFoodPost from "./components/CreateFoodPost";
 import "./components/CreateFoodPost.css";
 
 const App = () => {
