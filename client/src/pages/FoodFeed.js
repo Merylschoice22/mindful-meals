@@ -4,6 +4,7 @@ import ExtraFoodCardOne from "./ExtraFoodCardOne.js";
 import ExtraFoodCardTwo from "./ExtraFoodCardTwo.js";
 import Navbar from "../components/Navbar";
 import FoodPostCard from "../components/FoodPostCard.js";
+import LoadingButton from "../components/LoadingButton.js";
 
 const FoodFeed = () => {
   return (
@@ -17,6 +18,7 @@ const FoodFeed = () => {
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />
       {/* Loading Button */}
+      <LoadingButton />
     </div>
   );
 };
