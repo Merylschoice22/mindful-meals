@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import "./components/FoodPostCard.css";
-import ReservedPopup from "./components/ReservedPopup";
-import "./components/ReservedPopup.css";
+// import "./components/FoodPostCard.css";
+// import ReservedPopup from "./components/ReservedPopup";
+// import "./components/ReservedPopup.css";
 
 function ExtraFoodCardTwo() {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -31,6 +31,7 @@ function ExtraFoodCardTwo() {
           <img
             className="post-image"
             src="https://d1e3z2jco40k3v.cloudfront.net/-/media/mccormick-us/recipes/mccormick/b/2000/blueberry-muffins.jpg?rev=213d90493899477b8b156781c8aa06d0&vd=20200628T055650Z&hash=37CA7866D18FBD195C495824DE373751"
+            alt="blueberry muffins"
           ></img>
         </div>
         <div className="going-bottom">
@@ -40,10 +41,10 @@ function ExtraFoodCardTwo() {
           >
             Going!
           </button>
-          <ReservedPopup
+          {/* <ReservedPopup
             trigger={buttonPopup}
             setTrigger={setButtonPopup}
-          ></ReservedPopup>
+          ></ReservedPopup> */}
           <br></br>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import "./components/FoodPostCard.css";
-import ReservedPopup from "./components/ReservedPopup";
-import "./components/ReservedPopup.css";
+// import "./components/FoodPostCard.css";
+// import ReservedPopup from "./components/ReservedPopup";
+// import "./components/ReservedPopup.css";
 
 function FoodPostCard() {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -26,11 +26,12 @@ function FoodPostCard() {
           <span className="post-description-title">Hey there!</span>
           <p className="post-description">
             I would like to give away a vegan carrot cake that I baked this
-            morning. Enough for four people :)
+            morning. Enough for four people
           </p>
           <img
             className="post-image"
             src="https://img.delicious.com.au/Kl8Gm8gM/del/2017/05/spiced-carrot-cake-with-labneh-icing-46402-2.jpg"
+            alt="Carrot cake"
           ></img>
         </div>
         <div className="going-bottom">
@@ -40,10 +41,10 @@ function FoodPostCard() {
           >
             Going!
           </button>
-          <ReservedPopup
+          {/* <ReservedPopup
             trigger={buttonPopup}
             setTrigger={setButtonPopup}
-          ></ReservedPopup>
+          ></ReservedPopup> */}
           <br></br>
         </div>
       </div>
