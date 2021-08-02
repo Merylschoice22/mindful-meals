@@ -1,9 +1,8 @@
 import React from "react";
-
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import CreateFoodPost from "./components/CreateFoodPost";
+// import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
 import FoodPostCard from "./components/FoodPostCard";
 import Navbar from "./components/Navbar";
@@ -23,9 +22,8 @@ const App = () => {
           <Route path="/" component={FoodFeed} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/post" component={CreateFoodPost} />
+          {/* <Route path="/post" component={CreateFoodPost} /> */}
           <Route path="/reserve" component={FoodPostCard} />
-          <Route path="/search" component={Navbar} />
         </Switch>
         <footer>
           <h6>Footer text</h6>
