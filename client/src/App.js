@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Login from "./components/Login";
-import Register from "./components/Register";
-// import CreateFoodPost from "./components/CreateFoodPost";
+import Login from "./Login";
+import Register from "./Register";
+// import CreateFoodPost from "./CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
-import FoodPostCard from "./components/FoodPostCard";
-import Navbar from "./components/Navbar";
+import FoodPostCard from "./FoodPostCard";
+import Navbar from "./Navbar";
 
 const App = () => {
   return (

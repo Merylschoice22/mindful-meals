@@ -1,5 +1,5 @@
 import React from "react";
-import "./components/FoodPostForm.css";
+import "./FoodPostForm.css";
 
 function FoodPostForm() {
   return (

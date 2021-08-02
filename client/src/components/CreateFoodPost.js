@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-// import PopupInput from "./components/PopupInput";
-// import FoodPostForm from "./components/FoodPostForm";
-// import "./components/CreateFoodPost.css";
+// import PopupInput from "./PopupInput";
+// import FoodPostForm from "./FoodPostForm";
+// import "./CreateFoodPost.css";
 
 function CreateFoodPost(props) {
   const [inputPopup, setInputPopup] = useState(false);

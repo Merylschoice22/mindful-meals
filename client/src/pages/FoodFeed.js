@@ -1,10 +1,10 @@
 import React from "react";
-import CreateFoodPost from "../components/CreateFoodPost.js";
+import CreateFoodPost from "./components/CreateFoodPost.js";
 import ExtraFoodCardOne from "./ExtraFoodCardOne.js";
 import ExtraFoodCardTwo from "./ExtraFoodCardTwo.js";
-import Navbar from "../components/Navbar";
-import FoodPostCard from "../components/FoodPostCard.js";
-import LoadingButton from "../components/LoadingButton.js";
+import Navbar from "./components/Navbar";
+import FoodPostCard from "./components/FoodPostCard.js";
+import LoadingButton from "./components/LoadingButton.js";
 
 const FoodFeed = () => {
   return (
