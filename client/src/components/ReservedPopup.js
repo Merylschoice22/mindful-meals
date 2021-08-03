@@ -1,4 +1,5 @@
 import React from "react";
+import "./ReservedPopup.css";
 
 function ReservedPopup(props) {
   return props.trigger ? (

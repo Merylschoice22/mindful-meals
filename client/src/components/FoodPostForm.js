@@ -1,7 +1,7 @@
 import React from "react";
 import "./FoodPostForm.css";
 
-function FoodPostForm() {
+function FoodPostForm(props) {
   return (
     <div className="food-post-form">
       <p>Fill out the form below to share your food</p>

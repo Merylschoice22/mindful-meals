@@ -1,5 +1,5 @@
 import React from "react";
-// import "./LoadingButton.css";
+import "./LoadingButton.css";
 
 function LoadingButton() {
   return (

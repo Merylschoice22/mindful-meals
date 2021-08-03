@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-// import "./components/FoodPostCard.css";
-// import ReservedPopup from "./components/ReservedPopup";
-// import "./components/ReservedPopup.css";
+//import "./FoodPostCard.css";
+import "../components/FoodPostCard.css";
+import ReservedPopup from "../components/ReservedPopup";
+import "../components/ReservedPopup.css";
 
 function ExtraFoodCardTwo() {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -41,10 +42,10 @@ function ExtraFoodCardTwo() {
           >
             Going!
           </button>
-          {/* <ReservedPopup
+          <ReservedPopup
             trigger={buttonPopup}
             setTrigger={setButtonPopup}
-          ></ReservedPopup> */}
+          ></ReservedPopup>
           <br></br>
         </div>
       </div>
