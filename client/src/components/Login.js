@@ -33,7 +33,7 @@ const Login = () => {
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
           <label class="form-check-label" for="exampleCheck1">
-            Kepp me logged in
+            Keep me logged in
           </label>
         </div>
         <button type="submit" className="btn w-100 mt-2 p-3 submit">
