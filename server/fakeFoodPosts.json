@@ -11,7 +11,7 @@
     "title": "Carrot Cake",
     "location": "Sant Andreu de Palomar, Carrer Malats, no 46",
     "phone": "623 474 908",
-    "description": "I would like to give away a vegan carrot cake that I baked this morning. Enough for four people :)"
+    "description": "I would like to give away a vegan carrot cake that I baked this morning. Enough for four people"
   },
 
   {
@@ -33,7 +33,7 @@
   {
     "id": 4,
     "title": "Primavera Pasta Salad",
-    "location": "L'Eixample",
+    "location": "Eixample, Arago con Girona",
     "phone": "637 759 903",
     "description": "I would like to give away a freshly made salad. Enough for two servings"
   },
@@ -43,7 +43,7 @@
     "title": "Leftover lasagna 3 pieces",
     "location": "Born, next to Arc de Triomf",
     "phone": "692 880 548",
-    "description": "I made lasagna and have 3 pieces leftover that I won't be able to finish. It is with meat, onions, and zucchini and bechamel cheese"
+    "description": "I made lasagna and have 3 pieces leftover that I will not be able to finish. It is with meat, onions, and zucchini and bechamel cheese"
   },
   {
     "id": 6,
@@ -62,15 +62,15 @@
   {
     "id": 8,
     "title": "Extra chips and some drinks",
-    "location": "Barceloneta",
+    "location": "Barceloneta, next to Salamanca",
     "phone": "623 374 7444",
-    "description": "We had a party and there are leftover snacks. Everything has been opened except one bag of nuts. It's a few bags chips, some Coke, Coke Zero, and a Fanta Limon."
+    "description": "We had a party and there are leftover snacks. Everything has been opened except one bag of nuts. It is a few bags chips, some Coke, Coke Zero, and a Fanta Limon."
   },
   {
     "id": 9,
     "title": "Vegetables",
     "location": "Eixample - Villaroel / Valencia",
     "phone": "646 885 5215",
-    "description": "Extra vegetables from the fridge that I won't be able to finish before they expire. 2 tomatoes, 1 onion, 4 potatoes, and half a green pepper"
+    "description": "Extra vegetables from the fridge that I will not be able to finish before they expire. 2 tomatoes, 1 onion, 4 potatoes, and half a green pepper"
   }
 ]
