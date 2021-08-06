@@ -39,6 +39,22 @@ app.get("/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
+//MyFoodPosts
+//Get all food posts that I have posted
+//Filter by my user ID
+//Validate user is signed in
+//In order of post by most recent
+app.get("/myfoodposts/:userId", (req, res) => {
+  const userId = 1; //Get user ID
+  const query = "";
+  pool
+    .query(query)
+    .then((result) => {
+      res.json(result.rows);
+    })
+    .catch((error) => console.error(error));
+});
+
 //Food Post Form - Create a new food post
 app.post("/new-post", (req, res) => {
   /* BODY */
