@@ -26,7 +26,8 @@ app.get("/", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//FoodFeed - See more details about a specific post
+//FoodFeed - See more details about a specific post based on post ID
+//Get the post ID from the front end - when the button is clicked, it will send the post ID to the backend params
 app.get("/:postId", (req, res) => {
   const postId = req.params.postId;
   const query = `SELECT p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.id=${postId}`;
