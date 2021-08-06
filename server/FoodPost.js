@@ -41,15 +41,15 @@ app.get("/:postId", (req, res) => {
 
 //MyFoodPosts
 //Get all food posts that I have posted, in order of post by most recent
-//Filter by my user ID
+//By my user ID
 //Validate user is signed in
 app.get("/myfoodposts/:userId", (req, res) => {
-  const userId = 1; //Get user ID
-  const query =
-    "SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.status FROM posts p order by p.post_date asc";
+  const userId = 3; //Get user ID
+  const query = `SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.status FROM posts p WHERE p.users_id=${userId} order by p.post_date asc`;
   pool
     .query(query)
     .then((result) => {
+      //Validate user is signed in
       res.json(result.rows);
     })
     .catch((error) => console.error(error));
