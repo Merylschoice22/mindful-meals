@@ -16,7 +16,16 @@ const pool = new Pool(secret);
 //See more details -
 //In order of creation
 //Where status is available
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  const query =
+    "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date FROM posts p INNER JOIN users u ON p.users_id = u.id order by p.post_date asc limit 5";
+  pool
+    .query(query)
+    .then((result) => {
+      res.json(result.rows);
+    })
+    .catch((error) => console.error(error));
+});
 
 //Food Post Form - Create a new food post
 app.post("/new-post", (req, res) => {});
