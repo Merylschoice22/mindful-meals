@@ -40,13 +40,13 @@ app.get("/:postId", (req, res) => {
 });
 
 //MyFoodPosts
-//Get all food posts that I have posted
+//Get all food posts that I have posted, in order of post by most recent
 //Filter by my user ID
 //Validate user is signed in
-//In order of post by most recent
 app.get("/myfoodposts/:userId", (req, res) => {
   const userId = 1; //Get user ID
-  const query = "";
+  const query =
+    "SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.status FROM posts p order by p.post_date asc";
   pool
     .query(query)
     .then((result) => {
