@@ -13,12 +13,12 @@ const pool = new Pool(secret);
 
 //FoodFeed
 //See all food posts - username, title, barrio, description
-//See more details -
 //In order of creation
 //Where status is available
+//See more details -
 app.get("/", (req, res) => {
   const query =
-    "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date FROM posts p INNER JOIN users u ON p.users_id = u.id order by p.post_date asc limit 5";
+    "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
   pool
     .query(query)
     .then((result) => {
