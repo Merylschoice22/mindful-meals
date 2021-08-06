@@ -15,10 +15,21 @@ const pool = new Pool(secret);
 //See all food posts - username, title, barrio, description
 //In order of creation
 //Where status is available
-//See more details -
 app.get("/", (req, res) => {
   const query =
     "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
+  pool
+    .query(query)
+    .then((result) => {
+      res.json(result.rows);
+    })
+    .catch((error) => console.error(error));
+});
+
+//FoodFeed - See more details about a specific post
+app.get("/:postId", (req, res) => {
+  const postId = req.params.postId;
+  const query = `SELECT p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.id=${postId}`;
   pool
     .query(query)
     .then((result) => {
