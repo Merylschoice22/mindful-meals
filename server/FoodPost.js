@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 const pool = new Pool(secret);
 
 //FoodFeed
-  //See all food posts - username, title, barrio, description
-  //See more details -
-  //In order of creation
-  //Where status is available
+//See all food posts - username, title, barrio, description
+//See more details -
+//In order of creation
+//Where status is available
 app.get("/", (req, res) => {
   const query =
     "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date FROM posts p INNER JOIN users u ON p.users_id = u.id order by p.post_date asc limit 5";
@@ -37,13 +37,24 @@ app.post("/new-post", (req, res) => {
   //     "phone": "",
   //     "description": ""
   // }
+
   const post = req.body;
+  const userId = 1; //Fix this to authorize user who posts
+  const postDate = new Date();
 
-
-  const query =;
+  const query =
+    "INSERT INTO posts (users_id, post_date, title, loc_barrio, loc_street, phone, description, status) VALUES ($1, $2, $3, $4, $5, $6, $7, default)";
 
   pool
-    .query(query)
+    .query(query, [
+      userId,
+      postDate,
+      post.title,
+      post.loc_barrio,
+      post.loc_street,
+      post.phone,
+      post.description,
+    ])
     .then((result) => res.json(result.rows[0]))
     .catch((error) => console.error(error));
 
