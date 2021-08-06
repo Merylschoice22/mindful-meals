@@ -11,4 +11,14 @@ app.use(cors());
 app.use(bodyParser.json());
 const pool = new Pool(secret);
 
+//FoodFeed
+//See all food posts - username, title, barrio, description
+//See more details -
+//In order of creation
+//Where status is available
+app.get("/", (req, res) => {});
+
+//Food Post Form - Create a new food post
+app.post("/new-post", (req, res) => {});
+
 app.listen(3000, () => console.log("Server is up and running"));
