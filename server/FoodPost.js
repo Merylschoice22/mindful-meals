@@ -37,10 +37,11 @@ app.post("/new-post", (req, res) => {
   //     "phone": "",
   //     "description": ""
   // }
-
+  const now = new Date();
   const post = req.body;
   const userId = 1; //Fix this to authorize user who posts
-  const postDate = new Date();
+  const postDate = now;
+  //Format date using relativeDate(now);
 
   const query =
     "INSERT INTO posts (users_id, post_date, title, loc_barrio, loc_street, phone, description, status) VALUES ($1, $2, $3, $4, $5, $6, $7, default)";
@@ -58,7 +59,6 @@ app.post("/new-post", (req, res) => {
     .then((result) => res.json(result.rows[0]))
     .catch((error) => console.error(error));
 
-  post.title;
   // creator.createPost("Food Post");
 });
 
