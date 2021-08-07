@@ -10,8 +10,8 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     max: dbConfig.pool.max,
     min: dbConfig.pool.min,
     acquire: dbConfig.pool.acquire,
-    idle: dbConfig.pool.idle
-  }
+    idle: dbConfig.pool.idle,
+  },
 });
 
 const db = {};
@@ -23,17 +23,29 @@ db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
+db.post = require("../models/post.model.js")(sequelize, Sequelize);
 
 // Belongs.
 db.role.belongsToMany(db.user, {
   through: "user_roles",
   foreignKey: "roleId",
-  otherKey: "userId"
+  otherKey: "userId",
 });
 db.user.belongsToMany(db.role, {
   through: "user_roles",
   foreignKey: "userId",
-  otherKey: "roleId"
+  otherKey: "roleId",
+});
+
+db.post.belongsToMany(db.user, {
+  through: "user_posts",
+  foreignKey: "postId",
+  otherKey: "userId",
+});
+db.user.belongsToMany(db.post, {
+  through: "user_posts",
+  foreignKey: "userId",
+  otherKey: "postId",
 });
 
 db.ROLES = ["food giver", "admin", "food getter"];

@@ -9,36 +9,35 @@ const Role = db.role;
 const app = express();
 
 // method to generate database tables.
- db.sequelize.sync({ force: true }).then(() => {
- 	console.log("Drop and re-sync db.");
-	 initial();
-   });
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+  initial();
+});
 
 // function to create only 3 user_roles
 function initial() {
-	Role.create({
-	  id: 1,
-	  name: "admin"
-	});
-	
-   
-	Role.create({
-	  id: 2,
-	  name: "food giver"
-	});
-   
-	Role.create({
-	  id: 3,
-	  name: "food getter"
-	});
-	Role.create({
-		id: 4,
-		name: "user"
-	});
-  }
+  Role.create({
+    id: 1,
+    name: "admin",
+  });
+
+  Role.create({
+    id: 2,
+    name: "food giver",
+  });
+
+  Role.create({
+    id: 3,
+    name: "food getter",
+  });
+  Role.create({
+    id: 4,
+    name: "user",
+  });
+}
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8081",
 };
 
 app.use(cors(corsOptions));
@@ -57,8 +56,9 @@ app.get("/", (req, res) => {
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 // routes
-require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
+require("./routes/auth.routes")(app);
+require("./routes/user.routes")(app);
+require("./routes/post.routes")(app);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
