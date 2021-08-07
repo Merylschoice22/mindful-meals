@@ -11,6 +11,17 @@ app.use(cors());
 app.use(bodyParser.json());
 const pool = new Pool(secret);
 
+//GET ALL - testing
+app.get("/all", (req, res) => {
+  const query = "SELECT * from posts";
+  pool
+    .query(query)
+    .then((result) => {
+      res.json(result.rows);
+    })
+    .catch((error) => console.error(error));
+});
+
 //FoodFeed - GET
 //See all food posts - username, title, barrio, description
 //In order of creation
@@ -100,5 +111,31 @@ app.post("/new-post", (req, res) => {
 
 //MyFoodPosts - DELETE
 //Click a button to delete my post
+//Validate that user is logged in to see their food posts
+//Get the post id of the post they want to delete
+
+app.delete("/myfoodposts/:postId", (req, res) => {
+  const postId = req.params.postId; //Get the post ID
+  // const postTitle = post.title; //To mention the specific post deleted by title
+  const check = `SELECT * FROM posts p INNER JOIN users u on p.users_id = u.id WHERE p.id=${postId}`; //later use to validate login
+  const remove = `DELETE FROM posts where id=${postId}`;
+  pool
+    .query(check)
+    .then((result) => {
+      if (result.rows.length < 0) {
+        res.status(400).send("No post with that ID!");
+        //check this because it always deletes even if there is no post with that ID
+        //Please log in first
+      } else {
+        pool
+          .query(remove)
+          .then(() => {
+            res.send(`Post ${postId} successfully deleted!`);
+          })
+          .catch((error) => console.error(error));
+      }
+    })
+    .catch((error) => console.error(error));
+});
 
 app.listen(3000, () => console.log("Server is up and running"));
