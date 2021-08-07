@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const pool = new Pool(secret);
 
-//FoodFeed
+//FoodFeed - GET
 //See all food posts - username, title, barrio, description
 //In order of creation
 //Where status is available
@@ -26,7 +26,8 @@ app.get("/", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//FoodFeed - See more details about a specific post based on post ID
+//FoodFeed - GET
+//See more details about a specific post based on post ID
 //Get the post ID from the front end - when the button is clicked, it will send the post ID to the backend params
 app.get("/:postId", (req, res) => {
   const postId = req.params.postId;
@@ -39,7 +40,7 @@ app.get("/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//MyFoodPosts
+//MyFoodPosts - GET
 //Get all food posts that I have posted, in order of post by most recent
 //By my user ID
 //Validate user is signed in
@@ -55,7 +56,8 @@ app.get("/myfoodposts/:userId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//Food Post Form - Create a new food post
+//Food Post Form - POST
+//Create a new food post
 app.post("/new-post", (req, res) => {
   /* BODY */
   // {
@@ -89,5 +91,14 @@ app.post("/new-post", (req, res) => {
 
   // creator.createPost("Food Post");
 });
+
+//FoodFeed - PATCH
+//Click a button to update the status from available to reserved
+
+//MyFoodPosts - PATCH
+//Click a button to update the status from reserved to collected
+
+//MyFoodPosts - DELETE
+//Click a button to delete my post
 
 app.listen(3000, () => console.log("Server is up and running"));
