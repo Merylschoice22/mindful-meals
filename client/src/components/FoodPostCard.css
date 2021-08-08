@@ -40,6 +40,7 @@
   height: 70px;
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 }
 
 .post-username {
@@ -52,14 +53,30 @@
   margin: 20px 0;
 }
 
-.post-image {
-  margin-top: 20px;
-  width: 70%;
-  max-height: 400px;
-  object-fit: contain;
+.post-description {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.going-bottom {
+.post-description-title {
+  margin-right: 20px;
+}
+
+.image-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.post-image {
+  margin-top: 20px;
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+}
+
+.going-button {
   display: flex;
   align-items: center;
   justify-content: flex-start;

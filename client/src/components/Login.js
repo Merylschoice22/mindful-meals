@@ -3,8 +3,8 @@ import "./Login.css";
 
 const Login = () => {
   return (
-    <div class="container" id="container">
-      <div class="form-container sign-in-container">
+    <div className="container" id="container">
+      <div className="form-container sign-in-container">
         <form action="#">
           <h1>Mindful Meals</h1>
           <label>Email address</label>

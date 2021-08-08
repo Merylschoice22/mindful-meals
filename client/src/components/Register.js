@@ -2,8 +2,8 @@ import React from "react";
 import "./Form.css";
 const Register = () => {
   return (
-    <div class="container" id="container">
-      <div class="form-container sign-in-container">
+    <div className="container" id="container">
+      <div className="form-container sign-in-container">
         <form action="#">
           <h1>Register with us</h1>
           <label>Username</label>
