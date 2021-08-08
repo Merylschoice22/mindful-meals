@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../navbar-links/Navbar.css";
+import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   return (
@@ -17,23 +18,7 @@ const Navbar = () => {
       <div className="homepage-input-search">
         <input type="text" placeholder="Search" />
       </div>
-
-      <div className="navbar-right">
-        <section>
-          <div className="menu-btn" type="button">
-            <div className="menu-btn-burger">
-              <div className="content">
-                <Link to="" className="navbar-link">
-                  My Food Posts
-                </Link>
-                <Link to="" className="navbar-link">
-                  My Food
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      <DropdownMenu />
     </div>
   );
 };
