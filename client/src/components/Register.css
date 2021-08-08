@@ -12,6 +12,12 @@
   height: 100vh;
   margin: -20px 0 50px;
   background-color: #f7ede2;
+  background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
+}
+
+#container .form-container {
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 }
 
 h1 {

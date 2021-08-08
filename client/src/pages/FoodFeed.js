@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar-links/Navbar";
 import FoodPostCard from "../components/FoodPostCard";
 import CreateFoodPost from "../components/CreateFoodPost";
 import ExtraFoodCardOne from "./ExtraFoodCardOne";
@@ -9,7 +9,7 @@ import LoadingButton from "../components/LoadingButton";
 const FoodFeed = () => {
   return (
     <div className="food-feed">
-      <h1>Mindful Meals</h1>
+      <h1>Welcome to Mindful Meals</h1>
       <Navbar />
       {/* Popup Input Component */}
       <CreateFoodPost />

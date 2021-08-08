@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
-//import "./FoodPostCard.css";
-import "../components/FoodPostCard.css";
 import ReservedPopup from "../components/ReservedPopup";
 import "../components/ReservedPopup.css";
+import "../components/FoodPostCard.css";
 
 function ExtraFoodCardTwo() {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -35,7 +34,7 @@ function ExtraFoodCardTwo() {
             alt="blueberry muffins"
           ></img>
         </div>
-        <div className="going-bottom">
+        <div className="going-button">
           <button
             className="going-post-food-btn"
             onClick={() => setButtonPopup(true)}

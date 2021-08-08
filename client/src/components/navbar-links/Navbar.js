@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "../navbar-links/Navbar.css";
 
 const Navbar = () => {
   return (
@@ -17,19 +17,19 @@ const Navbar = () => {
       <div className="homepage-input-search">
         <input type="text" placeholder="Search" />
       </div>
-      <section>
-        <div className="menu-bar"></div>
-      </section>
+
       <div className="navbar-right">
         <section>
-          <div className="navbar-links">
-            <div className="content">
-              <Link to="" className="navbar-link">
-                My Food Posts
-              </Link>
-              <Link to="" className="navbar-link">
-                My Food
-              </Link>
+          <div className="menu-btn" type="button">
+            <div className="menu-btn-burger">
+              <div className="content">
+                <Link to="" className="navbar-link">
+                  My Food Posts
+                </Link>
+                <Link to="" className="navbar-link">
+                  My Food
+                </Link>
+              </div>
             </div>
           </div>
         </section>
