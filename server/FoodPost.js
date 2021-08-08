@@ -107,22 +107,34 @@ app.post("/new-post", (req, res) => {
 //Click a button to update the status from available to reserved
 app.patch("/status-reserved/:postId", (req, res) => {
   const postId = req.params.postId;
+  const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2";
   // //Click button again to reverse the status
-  // let status = "available";
   // let message = "";
-  // if (status == "available") {
-  //   status = "reserved";
-  //   message = "Food successfully reserved!";
-  // } else if (status == "reserved") {
-  //   status = "available";
-  //   message = "Food unreserved. Go pick out something else!";
-  // }
-
-  const query = "UPDATE posts SET status=$1 WHERE id=$2";
+  // const queryGET = "SELECT status from posts where id=$1";
+  //  if (status == "available") {
+  //    status = "reserved";
+  //    message = "Food successfully reserved!";
+  //  } else if (status == "reserved") {
+  //    status = "available";
+  //    message = "Food unreserved. Go pick out something else!";
+  //  }
   pool
-    .query(query, [status, postId])
+    .query(queryUPDATE, ["reserved", postId])
     .then(() => {
-      res.send(message);
+      res.send("Food successfully reserved!");
+    })
+    .catch((error) => console.error(error));
+});
+
+//My Food - PATCH
+//Click a button to cancel a reservation - update the status from reserved to available
+app.patch("/status-available/:postId", (req, res) => {
+  const postId = req.params.postId;
+  const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2";
+  pool
+    .query(queryUPDATE, ["available", postId])
+    .then(() => {
+      res.send("Food successfully unreserved!");
     })
     .catch((error) => console.error(error));
 });
