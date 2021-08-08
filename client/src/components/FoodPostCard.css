@@ -22,7 +22,7 @@
   width: 80%;
   border-radius: 10px;
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   background-color: #cdb2ab;
   margin-top: 10px;
 }
@@ -73,7 +73,6 @@
   width: 100%;
   border-radius: 10px;
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-
   height: auto;
 }
 
