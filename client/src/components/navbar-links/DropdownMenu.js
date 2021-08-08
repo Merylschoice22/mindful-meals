@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import NavbarOutsideClick from "./NavbarOutsideClick";
+import "./LinksNavbar.css";
 
 function DropdownMenu() {
   const dropdownRef = useRef(null);
