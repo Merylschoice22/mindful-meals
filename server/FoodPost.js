@@ -107,10 +107,20 @@ app.post("/new-post", (req, res) => {
 //Click a button to update the status from available to reserved
 app.patch("/status-reserved/:postId", (req, res) => {
   const postId = req.params.postId;
+  // //Click button again to reverse the status
+  // let status = "available";
+  // let message = "";
+  // if (status == "available") {
+  //   status = "reserved";
+  //   message = "Food successfully reserved!";
+  // } else if (status == "reserved") {
+  //   status = "available";
+  //   message = "Food unreserved. Go pick out something else!";
+  // }
 
   const query = "UPDATE posts SET status=$1 WHERE id=$2";
   pool
-    .query(query, ["reserved", postId])
+    .query(query, [status, postId])
     .then(() => {
       res.send(message);
     })
@@ -143,10 +153,9 @@ app.delete("/myfoodposts/:postId", (req, res) => {
   pool
     .query(check)
     .then((result) => {
-      if (result.rows.length < 0) {
+      if (result.rows.length <= 0) {
         res.status(400).send("No post with that ID!");
-        //check this because it always deletes even if there is no post with that ID
-        //Please log in first
+        //Validate log in - Please log in first
       } else {
         pool
           .query(remove)
