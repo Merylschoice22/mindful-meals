@@ -119,6 +119,16 @@ app.patch("/status-reserved/:postId", (req, res) => {
 
 //MyFoodPosts - PATCH
 //Click a button to update the status from reserved to collected
+app.patch("/status-collected/:postId", (req, res) => {
+  const postId = req.params.postId;
+  const query = "UPDATE posts SET status=$1 WHERE id=$2";
+  pool
+    .query(query, ["collected", postId])
+    .then(() => {
+      res.status(400).send("Food successfully collected!");
+    })
+    .catch((error) => console.error(error));
+});
 
 //MyFoodPosts - DELETE
 //Click a button to delete my post
