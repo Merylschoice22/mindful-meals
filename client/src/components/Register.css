@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+#container {
   background: #f6f5f7;
   display: flex;
   justify-content: center;
@@ -83,20 +83,6 @@ input {
   border-radius: 30x;
   border: 1px solid "#2A3C2";
   color: #ffffff;
-}
-
-.container {
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  overflow: hidden;
-  max-width: 100%;
-  min-height: 480px;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f7ede2;
-  width: 100%;
-  height: 100%;
 }
 
 .form-container {

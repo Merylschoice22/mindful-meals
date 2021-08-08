@@ -1,4 +1,4 @@
-.post-input > .post-label {
+/* .post-input > .post-label {
   padding: 50px;
   height: 50px;
   width: 300px !important;
@@ -6,5 +6,61 @@
 
 .share-btn {
   background-color: #a37774 !important;
+} */
+
+.post {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin-bottom: 50px;
+  background-color: #cdb2ab;
+  margin-top: 10px;
 }
 
+.post-wrapper {
+  padding: 10px;
+  overflow: hidden;
+  display: fixed;
+  margin-left: 0;
+}
+
+.post-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-top-left {
+  display: flex;
+  align-items: center;
+}
+
+.post-profile-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.post-username {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.post-center {
+  margin: 20px 0;
+}
+
+.post-image {
+  margin-top: 20px;
+  width: 70%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.going-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

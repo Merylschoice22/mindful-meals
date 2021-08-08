@@ -29,6 +29,8 @@
   width: 400px;
   height: 25px;
   margin-left: -3%;
+  display: flex;
+  align-items: inherit;
 }
 
 .homepage-input-search > input {
