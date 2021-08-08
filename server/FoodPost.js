@@ -105,6 +105,17 @@ app.post("/new-post", (req, res) => {
 
 //FoodFeed - PATCH
 //Click a button to update the status from available to reserved
+app.patch("/status-reserved/:postId", (req, res) => {
+  const postId = req.params.postId;
+
+  const query = "UPDATE posts SET status=$1 WHERE id=$2";
+  pool
+    .query(query, ["reserved", postId])
+    .then(() => {
+      res.send(message);
+    })
+    .catch((error) => console.error(error));
+});
 
 //MyFoodPosts - PATCH
 //Click a button to update the status from reserved to collected
