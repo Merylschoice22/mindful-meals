@@ -29,13 +29,15 @@ function FoodPostCard() {
             I would like to give away a vegan carrot cake that I baked this
             morning. Enough for four people
           </p>
-          <img
-            className="post-image"
-            src="https://img.delicious.com.au/Kl8Gm8gM/del/2017/05/spiced-carrot-cake-with-labneh-icing-46402-2.jpg"
-            alt="Carrot cake"
-          ></img>
+          <div className="image-box">
+            <img
+              className="post-image"
+              src="https://img.delicious.com.au/Kl8Gm8gM/del/2017/05/spiced-carrot-cake-with-labneh-icing-46402-2.jpg"
+              alt="Carrot cake"
+            ></img>
+          </div>
         </div>
-        <div className="going-bottom">
+        <div className="going-button">
           <button
             className="going-post-food-btn"
             onClick={() => setButtonPopup(true)}

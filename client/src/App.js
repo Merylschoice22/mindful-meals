@@ -21,9 +21,6 @@ const App = () => {
           <Route path="/post" exact component={CreateFoodPost} />
           <Route path="/reserve" exact component={FoodPostCard} />
         </Switch>
-        <footer>
-          <h6>Footer text</h6>
-        </footer>
       </div>
     </BrowserRouter>
   );
