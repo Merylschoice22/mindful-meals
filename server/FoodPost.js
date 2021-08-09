@@ -108,16 +108,7 @@ app.post("/new-post", (req, res) => {
 app.patch("/status-reserved/:postId", (req, res) => {
   const postId = req.params.postId;
   const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2";
-  // //Click button again to reverse the status
-  // let message = "";
-  // const queryGET = "SELECT status from posts where id=$1";
-  //  if (status == "available") {
-  //    status = "reserved";
-  //    message = "Food successfully reserved!";
-  //  } else if (status == "reserved") {
-  //    status = "available";
-  //    message = "Food unreserved. Go pick out something else!";
-  //  }
+
   pool
     .query(queryUPDATE, ["reserved", postId])
     .then(() => {
