@@ -5,6 +5,7 @@ import CreateFoodPost from "../components/CreateFoodPost";
 import ExtraFoodCardOne from "./ExtraFoodCardOne";
 import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
 import LoadingButton from "../components/LoadingButton";
+import "./FoodFeed.css";
 
 const FoodFeed = () => {
   return (

@@ -9,6 +9,10 @@
   background-color: #84a59d;
 }
 
+.navbar.navbar-default.navbar-fixed-top.affix .navbar-left .homepage-logo {
+  background-color: black;
+}
+
 .homepage-logo {
   height: 50px;
   object-fit: contain;
@@ -31,9 +35,15 @@
 .navbar > .homepage-input-search > input {
   width: 80%;
   border: 1px solid white;
-  background: #cdb2ab;
+  background: transparent;
   padding: 0.2rem;
   font-size: clamp(1.4rem, 1.8vw, 1.6rem);
+  border-radius: 10px;
+  color: whitesmoke;
+}
+
+input::placeholder {
+  color: teal;
 }
 
 input:focus {
@@ -55,4 +65,3 @@ input:focus {
   align-items: center;
   transition: all 0.5s ease-in-out;
 }
-
