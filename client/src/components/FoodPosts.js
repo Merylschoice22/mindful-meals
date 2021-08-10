@@ -6,12 +6,17 @@ import "./ReservedPopup.css";
 import LoadingButton from "./LoadingButton";
 
 const FoodPosts = () => {
+  const [end, setEnd] = useState(3);
+  const loadMore = () => {
+    setEnd((prevState) => prevState + 3);
+  };
+
   return (
     <div>
       <div>
         <FoodCard />
       </div>
-      <LoadingButton />
+      <LoadingButton loadMore={loadMore} />
     </div>
   );
 };
