@@ -4,7 +4,7 @@ import ReservedPopup from "./ReservedPopup";
 import "./FoodPostCard.css";
 import "./ReservedPopup.css";
 
-const FoodCard = () => {
+const FoodCard = ({ postData }) => {
   const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div className="post">
