@@ -7,68 +7,67 @@ export default class Register extends Component {
     super();
 
     this.state = {
-      UserName: "",
-      Email: "",
-      Password: "",
+      username: "",
+      email: "",
+      password: "",
     };
 
-    this.UserName = this.UserName.bind(this);
-    this.Email = this.Email.bind(this);
-    this.Password = this.Password.bind(this);
+    this.username = this.username.bind(this);
+    this.email = this.email.bind(this);
+    this.password = this.password.bind(this);
     this.register = this.register.bind(this);
   }
 
-  UserName(event) {
-    this.setState({ UserName: event.target.value });
+  username(event) {
+    this.setState({ username: event.target.value });
   }
-  Email(event) {
-    this.setState({ Email: event.target.value });
+  email(event) {
+    this.setState({ email: event.target.value });
   }
-  Password(event) {
-    this.setState({ Password: event.target.value });
+  password(event) {
+    this.setState({ password: event.target.value });
   }
 
   register(event) {
+    event.preventDefault();
     fetch("http://localhost:8080/api/auth/signup", {
-      method: "post",
+      //to specify what the backend expest to receive
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
+      method: "post",
       body: JSON.stringify({
-        UserName: this.state.UserName,
-        Email: this.state.Email,
-        Password: this.state.Password,
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
       }),
-    })
-      .then((Response) => Response.json())
-      .then((Result) => {
-        if (Result.Status == "Success") this.props.history.push("/Login");
-        else alert("Sorry!, Unauthenticated User!");
-      });
+    }).then((result) => {
+      if (result.status == 200) this.props.history.push("/Login");
+      else alert("Sorry!, Unauthenticated User!");
+    });
   }
 
   render() {
     return (
       <div className="container" id="container">
         <div className="form-container sign-in-container">
-          <form action="#">
+          <form onSubmit={this.register}>
             <h1>Register with us</h1>
             <label>Username</label>
             <input
               type="username"
-              onChange={this.UserName}
+              onChange={this.username}
               placeholder="Enter your username"
             />
             <label>Email address</label>
-            <input type="email" onChange={this.Email} placeholder="Email" />
+            <input type="email" onChange={this.email} placeholder="Email" />
             <label>Pick a password</label>
             <input
               type="password"
-              onChange={this.Password}
+              onChange={this.password}
               placeholder="Password"
             />
-            <button onClick={this.register}>Submit</button>
+            <button>Submit</button>
           </form>
         </div>
       </div>
