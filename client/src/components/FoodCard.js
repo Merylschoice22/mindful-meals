@@ -38,7 +38,7 @@ const FoodCard = ({ postData }) => {
             className="going-post-food-btn"
             onClick={() => setButtonPopup(true)}
           >
-            Going!
+            More info+
           </button>
           <ReservedPopup
             trigger={buttonPopup}
