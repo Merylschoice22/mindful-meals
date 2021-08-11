@@ -1,35 +1,29 @@
 import React from "react";
-
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import CreateFoodPost from "./components/CreateFoodPost";
+import FoodFeed from "./pages/FoodFeed";
+import FoodPostCard from "./components/FoodPostCard";
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
         <header>
-          <div className="header-text">
-            <h4>Mindful Meals</h4>
-            <h6>Tagline</h6>
-          </div>
-          <Navbar />
+          <div className="header-text"></div>
         </header>
         <Switch>
-          <Route path="/" component={FoodFeed} />
-		  <Route path="/login" component = {Login} />
-		  <Route path="/register" component = {Register} />
-		  <Route path="/" component={} />
-          <Route path="/" component={} />
-          <Route path="/" component={} />
+          <Route path="/" exact component={FoodFeed} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/post" exact component={CreateFoodPost} />
+          <Route path="/reserve" exact component={FoodPostCard} />
         </Switch>
-        <footer>
-          <h6>Footer text</h6>
-        </footer>
       </div>
     </BrowserRouter>
-  ); 
-
-}
+  );
+};
 
 export default App;
