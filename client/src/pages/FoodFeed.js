@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "../components/navbar-links/Navbar";
-import FoodPostCard from "../components/FoodPostCard";
+// import FoodPostCard from "../components/FoodPostCard";
 import CreateFoodPost from "../components/CreateFoodPost";
-import ExtraFoodCardOne from "./ExtraFoodCardOne";
-import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
-import LoadingButton from "../components/LoadingButton";
+import FoodPosts from "../components/FoodPosts";
+// import ExtraFoodCardOne from "./ExtraFoodCardOne";
+// import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
 import "./FoodFeed.css";
 
 const FoodFeed = () => {
@@ -15,11 +15,11 @@ const FoodFeed = () => {
       {/* Popup Input Component */}
       <CreateFoodPost />
       {/* User Food Cards */}
-      <FoodPostCard />
+      <FoodPosts />
+      {/* <FoodPostCard />  
       <ExtraFoodCardOne />
-      <ExtraFoodCardTwo />
-      {/* Loading Button */}
-      <LoadingButton />
+      <ExtraFoodCardTwo /> */}
+      {/* <LoadingButton /> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import "./ReservedPopup.css";
 
-function ReservedPopup(props) {
+const ReservedPopup = (props) => {
   return props.trigger ? (
     <div className="popup">
       <div className="inner-popup">
@@ -19,11 +19,11 @@ function ReservedPopup(props) {
           <div className="personal-details-post-owner">
             <div>
               <p className="location-food-giver">
-                Location is: Gracia, Carrer de Rabassa
+                Location is: {props.postData.loc_street}
               </p>
               <br></br>
               <p className="phone-food-giver">
-                The phone number is: 623 479 840
+                The phone number is: {props.postData.phone}
               </p>
             </div>
           </div>
@@ -45,5 +45,5 @@ function ReservedPopup(props) {
   ) : (
     ""
   );
-}
+};
 export default ReservedPopup;
