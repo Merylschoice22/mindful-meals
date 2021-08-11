@@ -1,0 +1,16 @@
+.load-posts {
+  flex: 5.5;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+}
+
+.load-button {
+  padding: 20px;
+  width: 85%;
+  background-color: #a37774 !important;
+  border-radius: 10px;
+}

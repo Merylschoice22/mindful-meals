@@ -1,0 +1,17 @@
+.food-feed h1 {
+  color: #2a3c24;
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, sans-serif;
+  flex-direction: column;
+}
+
+/* .food-feed{
+  background-color: #f7ede2;
+} */
