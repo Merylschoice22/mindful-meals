@@ -1,9 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import ReservedPopup from "./ReservedPopup";
+import FoodCard from "./FoodCard";
+import LoadingButton from "./LoadingButton";
 import "./FoodPostCard.css";
 import "./ReservedPopup.css";
-import LoadingButton from "./LoadingButton";
 
 const FoodPosts = () => {
   //LoadMoreBtn slice end
@@ -15,8 +15,8 @@ const FoodPosts = () => {
   //Get & Set data
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/all")
-      .then((res) => res.json)
+    fetch("http://localhost:3001/all")
+      .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setPosts(data);
