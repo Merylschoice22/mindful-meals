@@ -5,7 +5,7 @@ import FoodPostForm from "./FoodPostForm";
 import "./CreateFoodPost.css";
 
 function CreateFoodPost() {
-  const [inputPopup, setInputPopup] = useState(false);
+  
   return (
     <div className="make-food-post-popup">
       <div className="make-food-post-first-section">
@@ -21,9 +21,9 @@ function CreateFoodPost() {
           />
         </div>
         <br></br>
-        <PopupInput trigger={inputPopup} setTrigger={setInputPopup}>
+        
           <FoodPostForm />
-        </PopupInput>
+        
         <hr />
       </div>
     </div>
