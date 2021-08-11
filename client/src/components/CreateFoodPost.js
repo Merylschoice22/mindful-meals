@@ -15,7 +15,7 @@ function CreateFoodPost() {
     <div className="make-food-post-popup">
       <div className="make-food-post-first-section">
         <div className="first-section-input">
-          <h3>Create Post</h3>
+          {/* <h3>Create Post</h3> */}
         </div>
         <br></br>
         <div className="second-section-input">

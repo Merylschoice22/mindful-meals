@@ -1,4 +1,4 @@
-.post-input > .post-label {
+.food-post-wrapper > .post-label {
   padding: 50px;
   height: 50px;
   width: 300px !important;
@@ -6,4 +6,22 @@
 
 .share-btn {
   background-color: #a37774 !important;
+}
+
+.food-post-form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.food-post-wrapper {
+  padding: 10px;
+  overflow: hidden;
+  display: fixed;
+  margin-left: 0;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 1);
+  background-color: #cdb2ab;
 }

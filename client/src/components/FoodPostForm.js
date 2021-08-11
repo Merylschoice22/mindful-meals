@@ -36,7 +36,7 @@ function FoodPostForm() {
             placeholder="Tell us about the food that you have"
           ></input>
           <br></br>
-          <button className="share-btn"></button>
+          <button className="share-btn">Share</button>
         </form>
       </div>
     </div>
