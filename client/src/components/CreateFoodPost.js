@@ -5,7 +5,12 @@ import FoodPostForm from "./FoodPostForm";
 import "./CreateFoodPost.css";
 
 function CreateFoodPost() {
-  
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="make-food-post-popup">
       <div className="make-food-post-first-section">
@@ -17,13 +22,13 @@ function CreateFoodPost() {
           <input
             type="text"
             placeholder="What food are you giving away?"
-            onClick={() => setInputPopup(true)}
+            onClick={togglePopup}
           />
         </div>
         <br></br>
-        
-          <FoodPostForm />
-        
+
+        <FoodPostForm />
+
         <hr />
       </div>
     </div>
