@@ -43,6 +43,7 @@ const FoodCard = ({ postData }) => {
           <ReservedPopup
             trigger={buttonPopup}
             setTrigger={setButtonPopup}
+            postData={postData}
           ></ReservedPopup>
           <br></br>
         </div>
