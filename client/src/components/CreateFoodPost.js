@@ -26,9 +26,9 @@ function CreateFoodPost() {
           />
         </div>
         <br></br>
-
-        <FoodPostForm />
-
+        {isOpen && (
+          <PopupInput content={<FoodPostForm />} handleClose={togglePopup} />
+        )}
         <hr />
       </div>
     </div>
