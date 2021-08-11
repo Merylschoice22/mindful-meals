@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import ReservedPopup from "./ReservedPopup";
 import "./FoodPostCard.css";
 import "./ReservedPopup.css";
@@ -16,18 +15,16 @@ const FoodCard = ({ postData }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            <span className="post-username">Frida Amor</span>
+            <span className="post-username">{postData.users_id}</span>
           </div>
           <div className="post-top-right">
-            <span className="post-location">Gracia</span>
+            <span className="post-location">{postData.loc_barrio}</span>
           </div>
         </div>
         <div className="post-center">
-          <span className="post-description-title">Hey there!</span>
-          <p className="post-description">
-            I would like to give away a vegan carrot cake that I baked this
-            morning. Enough for four people
-          </p>
+          <span className="post-description-title">{postData.title}</span>
+          <p>Post Date</p>
+          <p className="post-description">{postData.description}</p>
           <div className="image-box">
             <img
               className="post-image"
