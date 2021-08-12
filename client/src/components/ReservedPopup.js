@@ -1,8 +1,8 @@
 import React from "react";
 import "./ReservedPopup.css";
 
-const ReservedPopup = (props) => {
-  return props.trigger ? (
+const ReservedPopup = () => {
+  return (
     <div className="popup">
       <div className="inner-popup">
         <div className="reserve-post-information">
@@ -19,31 +19,23 @@ const ReservedPopup = (props) => {
           <div className="personal-details-post-owner">
             <div>
               <p className="location-food-giver">
-                Location is: {props.postData.loc_street}
+                Location is:
+                {/* {props.postData.loc_street} */}
               </p>
               <br></br>
               <p className="phone-food-giver">
-                The phone number is: {props.postData.phone}
+                The phone number is:
+                {/* {props.postData.phone} */}
               </p>
             </div>
           </div>
           <br></br>
           <p>Click the button down below if everything sounds good for you </p>
           <br></br>
-          <button
-            className="reserved-btn"
-            onClick={() => {
-              props.setTrigger(false);
-            }}
-          >
-            Reserved
-          </button>
-          {props.children}
+          <button className="reserved-btn">Reserved</button>
         </div>
       </div>
     </div>
-  ) : (
-    ""
   );
 };
 export default ReservedPopup;
