@@ -36,7 +36,7 @@ function initial() {
   });
 }
 
-//here must be placed the website url
+//here must be placed the website url/frontend
 var corsOptions = {
   origin: "http://localhost:3000",
 };
