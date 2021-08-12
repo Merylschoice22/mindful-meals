@@ -36,8 +36,9 @@ function initial() {
   });
 }
 
+//here must be placed the website url/frontend
 var corsOptions = {
-  origin: "http://localhost:8081",
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));

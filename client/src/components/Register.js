@@ -1,52 +1,76 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Form.css";
-const Register = () => {
-	return (
-		<div
-			style={{ height: "100vh", backgroundColor: "#F7EDE2" }}
-			className="d-flex justify-content-center align-items-center"
-		>
-			<form className="">
-				<h1 className="mb-5 text-uppercase">Register with us </h1>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Username</label>
-					<input
-						type="name"
-						class="form-control"
-						id="exampleInputName"
-						aria-describedby="nameHelp"
-						placeholder="Enter username"
-					/>
-					<small id="nameHelp" class="form-text text-muted"></small>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label>
-					<input
-						type="email"
-						class="form-control"
-						id="exampleInputEmail1"
-						aria-describedby="emailHelp"
-						placeholder="Enter email"
-					/>
-					<small id="emailHelp" class="form-text text-muted">
-						We'll never share your email with anyone else.
-					</small>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword1">Password</label>
-					<input
-						type="password"
-						class="form-control"
-						id="exampleInputPassword1"
-						placeholder="Password"
-					/>
-				</div>
-				<button type="submit" className="btn w-100 p-3 submit">
-					Submit
-				</button>
-			</form>
-		</div>
-	);
-};
 
-export default Register;
+//const Register = () => {
+export default class Register extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      username: "",
+      email: "",
+      password: "",
+    };
+
+    this.username = this.username.bind(this);
+    this.email = this.email.bind(this);
+    this.password = this.password.bind(this);
+    this.register = this.register.bind(this);
+  }
+
+  username(event) {
+    this.setState({ username: event.target.value });
+  }
+  email(event) {
+    this.setState({ email: event.target.value });
+  }
+  password(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  register(event) {
+    event.preventDefault();
+    fetch("http://localhost:8080/api/auth/signup", {
+      //to specify what the backend expest to receive
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "post",
+      body: JSON.stringify({
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    }).then((result) => {
+      if (result.status == 200) this.props.history.push("/Login");
+      else alert("Sorry!, User is already taken!");
+    });
+  }
+
+  render() {
+    return (
+      <div className="container" id="container">
+        <div className="form-container sign-in-container">
+          <form onSubmit={this.register}>
+            <h1>Register with us</h1>
+            <label>Username</label>
+            <input
+              type="username"
+              onChange={this.username}
+              placeholder="Enter your username"
+            />
+            <label>Email address</label>
+            <input type="email" onChange={this.email} placeholder="Email" />
+            <label>Pick a password</label>
+            <input
+              type="password"
+              onChange={this.password}
+              placeholder="Password"
+            />
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}

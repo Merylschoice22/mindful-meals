@@ -1,51 +1,63 @@
-import React from "react";
+import React, { Component } from "react";
+import "./Login.css";
 
-const Login = () => {
-	return (
-		<div
-			style={{ height: "100vh", backgroundColor: "#F7EDE2" }}
-			className="d-flex justify-content-center align-items-center"
-		>
-			<form>
-				<h1 className="mb-5 text-uppercase">MindFul Meals</h1>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label>
-					<input
-						type="email"
-						class="form-control"
-						id="exampleInputEmail1"
-						aria-describedby="emailHelp"
-						placeholder="Enter email"
-					/>
-					<small id="emailHelp" class="form-text text-muted">
-						We'll never share your email with anyone else.
-					</small>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword1">Password</label>
-					<input
-						type="password"
-						class="form-control"
-						id="exampleInputPassword1"
-						placeholder="Password"
-					/>
-				</div>
-				<div class="form-check">
-					<input
-						type="checkbox"
-						class="form-check-input"
-						id="exampleCheck1"
-					/>
-					<label class="form-check-label" for="exampleCheck1">
-						Kepp me logged in
-					</label>
-				</div>
-				<button type="submit" className="btn w-100 mt-2 p-3 submit">
-					Submit
-				</button>
-			</form>
-		</div>
-	);
-};
+export default class Login extends Component {
+  constructor() {
+    super();
 
-export default Login;
+    this.state = {
+      email: "",
+      password: "",
+    };
+
+    this.email = this.email.bind(this);
+    this.password = this.password.bind(this);
+    this.login = this.login.bind(this);
+  }
+
+  email(event) {
+    this.setState({ email: event.target.value });
+  }
+  password(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  login(event) {
+    event.preventDefault();
+    fetch("http://localhost:8080/api/auth/signin", {
+      //to specify what the backend expest to receive
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "post",
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    }).then((result) => {
+      if (result.status == 200) this.props.history.push("/");
+      else alert("Sorry!, Something was incorrect!");
+    });
+  }
+
+  render() {
+    return (
+      <div className="container" id="container">
+        <div className="form-container sign-in-container">
+          <form onSubmit={this.login}>
+            <h1>Mindful Meals</h1>
+            <label>Email address</label>
+            <input type="email" onChange={this.email} placeholder="Email" />
+            <label>Your password</label>
+            <input
+              type="password"
+              onChange={this.password}
+              placeholder="Password"
+            />
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
