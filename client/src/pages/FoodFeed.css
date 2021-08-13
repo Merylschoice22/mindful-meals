@@ -12,6 +12,7 @@
   flex-direction: column;
 }
 
-/* .food-feed{
-  background-color: #f7ede2;
-} */
+.food-feed{
+  /* background-color: #f7ede2; */
+  overscroll-behavior: none;
+}

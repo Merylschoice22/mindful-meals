@@ -25,3 +25,16 @@
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 1);
   background-color: #cdb2ab;
 }
+
+
+form {
+  margin-top: 10px;
+}
+
+ p.post-label {
+  flex: 0 1 auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: flex-start;
+  
+}
