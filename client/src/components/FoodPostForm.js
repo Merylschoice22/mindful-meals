@@ -1,4 +1,5 @@
 import React from "react";
+import ShareFoodPost from "../buttons/ShareFoodPost";
 import "./FoodPostForm.css";
 
 function FoodPostForm() {
@@ -36,7 +37,7 @@ function FoodPostForm() {
             placeholder="Tell us about the food that you have"
           ></input>
           <br></br>
-          <button className="share-btn">Share</button>
+          <ShareFoodPost />
         </form>
       </div>
     </div>
