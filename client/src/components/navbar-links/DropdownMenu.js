@@ -21,10 +21,10 @@ function DropdownMenu() {
             <section>
               <div className="link-style">
                 <div className="links">
-                  <Link to="" className="navbar-link">
+                  <Link to="/myfoodpost" className="navbar-link">
                     My Food Posts
                   </Link>
-                  <Link to="" className="navbar-link">
+                  <Link to="/myfood" className="navbar-link">
                     My Food
                   </Link>
                 </div>
