@@ -22,3 +22,16 @@
   overscroll-behavior: contain !important;
  
 }
+
+.reserve-post-information h3{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.command-intro p, .click-info {
+  font-size: 18px;
+}
+
+.personal-details-post-owner p {
+  font-weight: bold;
+}

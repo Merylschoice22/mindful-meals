@@ -5,7 +5,8 @@ import Register from "./components/Register";
 import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
 import FoodPostCard from "./components/FoodPostCard";
-
+import "./index.css";
+import "./App.css";
 
 const App = () => {
   return (

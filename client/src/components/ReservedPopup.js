@@ -30,7 +30,7 @@ const ReservedPopup = () => {
             </div>
           </div>
           <br></br>
-          <p>Click the button down below if everything sounds good for you </p>
+          <p className="click-info">Click the button down below if everything sounds good for you </p>
           <br></br>
           <button className="reserved-btn">Reserved</button>
         </div>

@@ -5,7 +5,7 @@ function FoodPostForm() {
   return (
     <div className="food-post-form">
       <div className="food-post-wrapper">
-        <p>Fill out the form below to share your food</p>
+        <p className="p-header">Fill out the form below to share your food</p>
         <br></br>
         <form>
           <p className="post-label">Title</p>

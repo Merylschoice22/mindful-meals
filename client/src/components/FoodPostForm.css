@@ -6,6 +6,8 @@
 
 .share-btn {
   background-color: #a37774 !important;
+  font-family: "Quicksand";
+  font-size: 12px;
 }
 
 .food-post-form {
@@ -16,7 +18,7 @@
 }
 
 .food-post-wrapper {
-  padding: 10px;
+  /* padding: 10px; */
   overflow: hidden;
   display: fixed;
   margin-left: 0;
@@ -27,14 +29,28 @@
 }
 
 
-form {
-  margin-top: 10px;
+.food-post-wrapper p {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
+.p-header{
+  font-weight: bold;
+  text-align: center;
+}
+
+/* form {
+  margin-top: 10px;
+} */
+
  p.post-label {
-  flex: 0 1 auto;
   align-items: flex-start;
   justify-content: flex-start;
   align-self: flex-start;
-  
+  color: #2a3c24 !important;
+  font-size: 18px !important;
+  overflow: hidden;
+  position: relative; 
+   overflow-y: none; 
 }
