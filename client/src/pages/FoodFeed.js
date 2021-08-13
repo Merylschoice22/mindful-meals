@@ -17,7 +17,7 @@ const FoodFeed = () => {
       {/* Popup Input Component */}
       <CreateFoodPost />
       {/* User Food Cards */}
-      <FoodCard />
+      {/* <FoodCard  I think we wanna delete this /> */}
       {/* <FoodPostCard />
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />

@@ -1,7 +1,7 @@
 import React from "react";
 import "./ReservedPopup.css";
 
-const ReservedPopup = () => {
+const ReservedPopup = ({postData}) => {
   return (
     <div className="popup">
       <div className="inner-popup">
@@ -20,12 +20,12 @@ const ReservedPopup = () => {
             <div>
               <p className="location-food-giver">
                 Location is:
-                {/* {props.postData.loc_street} */}
+                {postData.loc_street}
               </p>
               <br></br>
               <p className="phone-food-giver">
                 The phone number is:
-                {/* {props.postData.phone} */}
+                {postData.phone}
               </p>
             </div>
           </div>
