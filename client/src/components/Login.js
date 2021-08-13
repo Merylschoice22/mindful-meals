@@ -35,7 +35,7 @@ export default class Login extends Component {
         password: this.state.password,
       }),
     }).then((result) => {
-      if (result.status == 200) this.props.history.push("/");
+      if (result.status === 200) this.props.history.push("/");
       else alert("Sorry!, Something was incorrect!");
     });
   }

@@ -42,7 +42,7 @@ export default class Register extends Component {
         password: this.state.password,
       }),
     }).then((result) => {
-      if (result.status == 200) this.props.history.push("/Login");
+      if (result.status === 200) this.props.history.push("/Login");
       else alert("Sorry!, User is already taken!");
     });
   }
