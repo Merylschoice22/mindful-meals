@@ -73,9 +73,11 @@ body {
   border-bottom: 1px solid #dddddd;
 }
 
-.menu .links .navbar-link {
+.menu .links .navbar-link , .navbar-link-login, .navbar-link-register{
   text-decoration: none;
-  color: #333333;
+  color: white;
   padding: 15px 20px;
   display: block;
+   border-bottom: 1px solid #dddddd;
 }
+
