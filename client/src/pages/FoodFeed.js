@@ -9,6 +9,7 @@ import FoodPosts from "../components/FoodPosts";
 import "./FoodFeed.css";
 import FoodCard from "../components/FoodCard";
 
+
 const FoodFeed = () => {
   return (
     <div className="food-feed">
@@ -18,6 +19,7 @@ const FoodFeed = () => {
       <CreateFoodPost />
       {/* User Food Cards */}
       {/* <FoodCard  I think we wanna delete this /> */}
+      
       {/* <FoodPostCard />
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />
