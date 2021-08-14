@@ -9,8 +9,21 @@
   flex-direction: column;
   font-family: monospace, sans-serif;
   height: 100vh;
-  margin: -20px 0 50px;
+  margin: -20px 0 -20px;
+}
+
+#container::before {
   background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
+  background-size: cover;
+  background-repeat: repeat-y;
+  content: "";
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1;
 }
 
 form h1 {
@@ -23,19 +36,6 @@ form label {
   font-size: 20px !important;
   font-weight: bold;
 }
-
-/* #container::before {
-  background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
-  background-size: cover;
-    content: "";
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-  opacity: 0.5;
-  z-index: -1;
-} */
 
 #container .form-container {
   border-radius: 10px;
@@ -115,7 +115,6 @@ input {
   border-radius: 30x;
   border: 1px solid #a37774;
   color: #ffffff;
-  
 }
 
 .form-container {

@@ -39,7 +39,7 @@
 
 .second-section-input input[type="text"]{
   font-family: "Quicksand";
-  font-size: 20px;
+  font-size: 18px;
   background: transparent;
   padding: 0.2rem;
   font-size: clamp(1.4rem, 1.8vw, 1.6rem);
