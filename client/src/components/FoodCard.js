@@ -1,11 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import ReservedPopup from "./ReservedPopup";
+import PopupInput from "./PopupInput";
 import "./FoodPostCard.css";
 import "./ReservedPopup.css";
+import "./PopupInput.css";
 
 const FoodCard = ({ postData }) => {
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="post">
       <div className="post-wrapper">
@@ -16,18 +22,16 @@ const FoodCard = ({ postData }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            <span className="post-username">Frida Amor</span>
+            <span className="post-username">{postData.users_id}</span>
           </div>
           <div className="post-top-right">
-            <span className="post-location">Gracia</span>
+            <span className="post-location">{postData.loc_barrio}</span>
           </div>
         </div>
         <div className="post-center">
-          <span className="post-description-title">Hey there!</span>
-          <p className="post-description">
-            I would like to give away a vegan carrot cake that I baked this
-            morning. Enough for four people
-          </p>
+          <span className="post-description-title">{postData.title}</span>
+          <p>Post Date</p>
+          <p className="post-description">{postData.description}</p>
           <div className="image-box">
             <img
               className="post-image"
@@ -37,16 +41,21 @@ const FoodCard = ({ postData }) => {
           </div>
         </div>
         <div className="going-button">
-          <button
-            className="going-post-food-btn"
-            onClick={() => setButtonPopup(true)}
-          >
-            More information
+          <button className="going-post-food-btn" onClick={togglePopup}>
+            More info+
           </button>
-          <ReservedPopup
+          {isOpen && (
+            <PopupInput
+              content={<ReservedPopup postData={postData} />}
+              handleClose={togglePopup}
+            />
+          )}
+
+          {/* <ReservedPopup
             trigger={buttonPopup}
             setTrigger={setButtonPopup}
-          ></ReservedPopup>
+            postData={postData}
+          ></ReservedPopup> */}
           <br></br>
         </div>
       </div>

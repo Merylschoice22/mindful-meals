@@ -1,11 +1,13 @@
 import React from "react";
 import Navbar from "../components/navbar-links/Navbar";
-import FoodPostCard from "../components/FoodPostCard";
+//import FoodPostCard from "../components/FoodPostCard";
 import CreateFoodPost from "../components/CreateFoodPost";
-import ExtraFoodCardOne from "./ExtraFoodCardOne";
-import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
-import LoadingButton from "../components/LoadingButton";
+import FoodPosts from "../components/FoodPosts";
+//import ExtraFoodCardOne from "./ExtraFoodCardOne";
+//import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
+//import LoadingButton from "../components/LoadingButton";
 import "./FoodFeed.css";
+// import FoodCard from "../components/FoodCard";
 
 const FoodFeed = () => {
   return (
@@ -15,11 +17,12 @@ const FoodFeed = () => {
       {/* Popup Input Component */}
       <CreateFoodPost />
       {/* User Food Cards */}
-      <FoodPostCard />
+      {/* <FoodCard  I think we wanna delete this /> */}
+      {/* <FoodPostCard />
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />
-      {/* Loading Button */}
-      <LoadingButton />
+      <LoadingButton I think we wanna delete this too/> */}
+      <FoodPosts />
     </div>
   );
 };
