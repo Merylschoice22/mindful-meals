@@ -28,7 +28,7 @@ app.get("/all", (req, res) => {
 //Where status is available
 app.get("/", (req, res) => {
   const query =
-    "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
+    "SELECT u.username, p.title, p.loc_barrio, p.description, p.post_date, p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
   pool
     .query(query)
     .then((result) => {
@@ -37,19 +37,19 @@ app.get("/", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//FoodFeed - GET
-//See more details about a specific post based on post ID
-//Get the post ID from the front end - when the button is clicked, it will send the post ID to the backend params
-app.get("/:postId", (req, res) => {
-  const postId = req.params.postId;
-  const query = `SELECT p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.id=${postId}`;
-  pool
-    .query(query)
-    .then((result) => {
-      res.json(result.rows);
-    })
-    .catch((error) => console.error(error));
-});
+// //FoodFeed - GET - Unnecessary because the front end is already linked
+// //See more details about a specific post based on post ID
+// //Get the post ID from the front end - when the button is clicked, it will send the post ID to the backend params
+// app.get("/:postId", (req, res) => {
+//   const postId = req.params.postId;
+//   const query = `SELECT p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.id=${postId}`;
+//   pool
+//     .query(query)
+//     .then((result) => {
+//       res.json(result.rows);
+//     })
+//     .catch((error) => console.error(error));
+// });
 
 //MyFoodPosts - GET
 //Get all food posts that I have posted, in order of post by most recent

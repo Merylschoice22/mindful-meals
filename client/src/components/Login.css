@@ -3,7 +3,6 @@
 }
 
 #container {
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +12,29 @@
   margin: -20px 0 50px;
   background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
 }
+
+form h1 {
+  font-family: "Nothing you could do";
+}
+
+form label {
+  font-family: "Nothing you could do";
+  color: #2a3c24 !important;
+  font-size: 18px !important;
+}
+
+/* #container::before {
+  background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
+  background-size: cover;
+    content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+  opacity: 0.5;
+  z-index: -1;
+} */
 
 #container .form-container {
   border-radius: 10px;
@@ -46,6 +68,8 @@ button {
   padding: 12px 20px;
   margin: 20px 0;
   width: 100%;
+  font-family: "Quicksand";
+  font-size: 12px;
 }
 
 button:active {
@@ -62,7 +86,7 @@ button.ghost {
 }
 
 form {
-  background-color: #f7ede2;;
+  background-color: #f7ede2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,4 +121,9 @@ input {
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
+}
+
+input {
+  font-family: "Quicksand";
+  font-size: 15px;
 }

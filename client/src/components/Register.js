@@ -43,7 +43,7 @@ export default class Register extends Component {
       }),
     }).then((result) => {
       if (result.status === 200) this.props.history.push("/Login");
-      else alert("Sorry!, Unauthenticated User!");
+      else alert("Sorry!, User is already taken!");
     });
   }
 

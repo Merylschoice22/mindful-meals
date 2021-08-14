@@ -7,7 +7,7 @@ import FoodPosts from "../components/FoodPosts";
 //import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
 //import LoadingButton from "../components/LoadingButton";
 import "./FoodFeed.css";
-import FoodCard from "../components/FoodCard";
+// import FoodCard from "../components/FoodCard";
 
 const FoodFeed = () => {
   return (
@@ -17,11 +17,11 @@ const FoodFeed = () => {
       {/* Popup Input Component */}
       <CreateFoodPost />
       {/* User Food Cards */}
-      {/* <FoodCard /> */}
+      {/* <FoodCard  I think we wanna delete this /> */}
       {/* <FoodPostCard />
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />
-      <LoadingButton /> */}
+      <LoadingButton I think we wanna delete this too/> */}
       <FoodPosts />
     </div>
   );

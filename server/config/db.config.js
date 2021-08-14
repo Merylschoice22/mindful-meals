@@ -1,9 +1,10 @@
 module.exports = {
   HOST: "localhost",
   USER: "postgres",
-  PASSWORD: "660182", // HEY!! dont forget to change according to your user.
+  PASSWORD: "", // HEY!! dont forget to change according to your user.
   DB: "mindful_meals",
   dialect: "postgres",
+  PORT: 5432,
   // POOL IS OPTIONAL :D ! is only for connections.
   pool: {
     max: 5,

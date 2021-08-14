@@ -12,24 +12,26 @@ function CreateFoodPost() {
   };
 
   return (
-    <div className="make-food-post-popup">
-      <div className="make-food-post-first-section">
-        <div className="first-section-input">
-          {/* <h3>Create Post</h3> */}
+    <div className="container">
+      <div className="make-food-post-popup">
+        <div className="make-food-post-first-section">
+          <div className="first-section-input">
+            {/* <h3>Create Post</h3> */}
+          </div>
+          <br></br>
+          <div className="second-section-input">
+            <input
+              type="text"
+              placeholder="What food are you giving away?"
+              onClick={togglePopup}
+            />
+          </div>
+          <br></br>
+          {isOpen && (
+            <PopupInput content={<FoodPostForm />} handleClose={togglePopup} />
+          )}
+          <hr />
         </div>
-        <br></br>
-        <div className="second-section-input">
-          <input
-            type="text"
-            placeholder="What food are you giving away?"
-            onClick={togglePopup}
-          />
-        </div>
-        <br></br>
-        {isOpen && (
-          <PopupInput content={<FoodPostForm />} handleClose={togglePopup} />
-        )}
-        <hr />
       </div>
     </div>
   );

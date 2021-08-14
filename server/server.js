@@ -36,7 +36,7 @@ function initial() {
   });
 }
 
-//here must be placed the website url
+//here must be placed the website url/frontend
 var corsOptions = {
   origin: "http://localhost:3000",
 };
@@ -49,16 +49,31 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to mindful-meals application." });
-});
+// // simple route
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to mindful-meals application." });
+// });
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
+
 // routes
+// var foo = require("./routes/auth.routes");
+// foo(app);
+const dbConfig = require("./config/db.config");
+const { Pool } = require("pg");
+const pool = new Pool({
+  user: dbConfig.USER,
+  host: dbConfig.HOST,
+  database: dbConfig.DB,
+  password: dbConfig.PASSWORD,
+  port: dbConfig.PORT,
+});
+
 require("./routes/auth.routes")(app);
 require("./routes/user.routes")(app);
+require("./routes/foodfeed.routes")(app, pool);
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
