@@ -23,6 +23,7 @@ db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
+db.post = require("../models/post.model.js")(sequelize, Sequelize);
 
 // Belongs.
 db.role.belongsToMany(db.user, {
@@ -35,6 +36,8 @@ db.user.belongsToMany(db.role, {
   foreignKey: "userId",
   otherKey: "roleId",
 });
+//belong to one, shouldbe change
+db.post.belongsTo(db.user);
 
 db.ROLES = ["food giver", "admin", "food getter"];
 
