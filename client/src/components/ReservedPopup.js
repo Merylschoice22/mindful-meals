@@ -1,7 +1,8 @@
 import React from "react";
 import "./ReservedPopup.css";
 
-const ReservedPopup = ({postData}) => {
+const ReservedPopup = ({ postData }) => {
+  //Separate the Location and Phone number with a bold font and space
   return (
     <div className="popup">
       <div className="inner-popup">
@@ -30,7 +31,9 @@ const ReservedPopup = ({postData}) => {
             </div>
           </div>
           <br></br>
-          <p className="click-info">Click the button down below if everything sounds good for you </p>
+          <p className="click-info">
+            Click the button down below if everything sounds good for you{" "}
+          </p>
           <br></br>
           <button className="reserved-btn">Reserved</button>
         </div>

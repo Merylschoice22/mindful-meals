@@ -7,7 +7,7 @@ import FoodPosts from "../components/FoodPosts";
 //import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
 //import LoadingButton from "../components/LoadingButton";
 import "./FoodFeed.css";
-import FoodCard from "../components/FoodCard";
+// import FoodCard from "../components/FoodCard";
 
 
 const FoodFeed = () => {
@@ -23,7 +23,7 @@ const FoodFeed = () => {
       {/* <FoodPostCard />
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />
-      <LoadingButton /> */}
+      <LoadingButton I think we wanna delete this too/> */}
       <FoodPosts />
     </div>
   );
