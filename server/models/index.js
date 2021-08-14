@@ -36,21 +36,11 @@ db.user.belongsToMany(db.role, {
   foreignKey: "userId",
   otherKey: "roleId",
 });
-
-db.post.belongsToMany(db.user, {
-  through: "user_posts",
-  foreignKey: "postId",
-  otherKey: "userId",
-});
-db.user.belongsToMany(db.post, {
-  through: "user_posts",
-  foreignKey: "userId",
-  otherKey: "postId",
-});
+//belong to one, shouldbe change
+db.post.belongsTo(db.user);
 
 db.ROLES = ["food giver", "admin", "food getter"];
 
 module.exports = db;
 // db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 // db.users = require("./user.model.js")(sequelize, Sequelize);
-module.exports = db;

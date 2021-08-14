@@ -39,8 +39,8 @@ exports.signup = (req, res) => {
           });
         });
       } else {
-        // user role = 4 GENERAL USER
-        user.setRoles([4]).then(() => {
+        // user role = 3 GENERAL USER
+        user.setRoles([3]).then(() => {
           res.send({ message: "User was registered successfully!" });
         });
       }
