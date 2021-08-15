@@ -28,7 +28,6 @@
   background-color: #cdb2ab;
 }
 
-
 .food-post-wrapper p {
   align-items: center;
   display: flex;
@@ -36,47 +35,43 @@
   text-align: center;
 }
 
-
 /* form {
   margin-top: 10px;
 } */
 
- p.post-label {
+p.post-label {
   align-items: flex-start;
   justify-content: flex-start;
   align-self: flex-start;
   color: #2a3c24 !important;
   font-size: 18px !important;
   overflow: hidden;
-  position: relative; 
-   overflow-y: none; 
+  position: relative;
+  overflow-y: none;
 }
 
-form .post-label{
-   font-family: "Nothing you could do";
+form .post-label {
+  font-family: "Nothing you could do";
   color: #2a3c24 !important;
   font-size: 20px !important;
   font-weight: bold;
   margin-top: 5px;
 }
 
-.food-post-wrapper .p-header{
+.food-post-wrapper .p-header {
   font-weight: bolder;
   margin: 0;
-  margin-bottom: 30px;
-  margin-top: 15px;
+  padding-top: 19px;
   text-transform: uppercase !important;
   text-align: center;
   padding: 5px 0;
   justify-content: center;
   align-items: center;
   letter-spacing: 1px;
-
 }
 
 .share-btn {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
   background-color: #a37774;
   color: #ffffff;
   font-weight: light;
