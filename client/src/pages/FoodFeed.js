@@ -8,7 +8,8 @@ import FoodPosts from "../components/FoodPosts";
 //import LoadingButton from "../components/LoadingButton";
 import "./FoodFeed.css";
 // import FoodCard from "../components/FoodCard";
-
+import Footer from "../components/Footer";
+import "../components/Footer.css";
 
 const FoodFeed = () => {
   return (
@@ -19,12 +20,13 @@ const FoodFeed = () => {
       <CreateFoodPost />
       {/* User Food Cards */}
       {/* <FoodCard  I think we wanna delete this /> */}
-      
+
       {/* <FoodPostCard />
       <ExtraFoodCardOne />
       <ExtraFoodCardTwo />
       <LoadingButton I think we wanna delete this too/> */}
       <FoodPosts />
+      <Footer />
     </div>
   );
 };

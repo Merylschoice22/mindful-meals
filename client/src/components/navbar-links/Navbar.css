@@ -7,7 +7,6 @@
   /* z-index: 9999; */
   padding: 0 2rem;
   background-color: #84a59d;
-  
 }
 
 .navbar.navbar-default.navbar-fixed-top.affix .navbar-left .homepage-logo {
@@ -67,3 +66,12 @@ input:focus {
   transition: all 0.5s ease-in-out;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+  .navbar-left {
+    width: 100%;
+    float: none;
+  }
+}
