@@ -95,14 +95,12 @@
 .going-button {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   border-radius: 10px;
-  
 }
 
-.going-button.going-post-food-btn {
+.going-post-food-btn {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
   background-color: #a37774;
   color: #ffffff;
   font-weight: light;
@@ -115,12 +113,23 @@
   margin: 20px 0;
   font-family: "Julius Sans One", sans-serif;
   font-size: 15px;
+  width: 85%;
 }
 
-.post-description, .post-location, .post-username{
-font-family: "Julius Sans One", sans-serif;
-font-size: 20px;
-margin-top: 10px;
-font-weight: bold !important;
+.post-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.post-description,
+.post-location,
+.post-username {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold !important;
+}
+  .post-top-right p{
+    padding-top: 16px;
+  }
