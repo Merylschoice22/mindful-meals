@@ -15,7 +15,7 @@ const FoodPosts = () => {
   //Get & Set data
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch("http://localhost:8080/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
