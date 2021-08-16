@@ -53,13 +53,13 @@ export default class Register extends Component {
         <div className="form-container sign-in-container">
           <form onSubmit={this.register}>
             <h1>Register with us</h1>
-            <label>Username</label>
+            <label className="username">Pick a username</label>
             <input
               type="username"
               onChange={this.username}
               placeholder="Enter your username"
             />
-            <label>Email address</label>
+            <label>Your Email address</label>
             <input type="email" onChange={this.email} placeholder="Email" />
             <label>Pick a password</label>
             <input

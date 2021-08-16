@@ -35,7 +35,7 @@ const ReservedPopup = ({ postData }) => {
             Click the button down below if everything sounds good for you{" "}
           </p>
           <br></br>
-          <button className="reserved-btn">Reserved</button>
+          <button className="reserved-btn">Reserve</button>
         </div>
       </div>
     </div>

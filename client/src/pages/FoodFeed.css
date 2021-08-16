@@ -8,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   font-size: 40px;
+  letter-spacing: 10px;
 }
 
 .food-feed h1::before {
@@ -20,7 +21,7 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.7;
+  opacity: 0.3;
   z-index: -1;
 }
 

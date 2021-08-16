@@ -9,8 +9,21 @@
   flex-direction: column;
   font-family: monospace, sans-serif;
   height: 100vh;
-  margin: -20px 0 50px;
+  margin: -20px 0 -20px;
+}
+
+#container::before {
   background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
+  background-size: cover;
+  background-repeat: repeat-y;
+  content: "";
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1;
 }
 
 form h1 {
@@ -20,21 +33,9 @@ form h1 {
 form label {
   font-family: "Nothing you could do";
   color: #2a3c24 !important;
-  font-size: 18px !important;
+  font-size: 20px !important;
+  font-weight: bold;
 }
-
-/* #container::before {
-  background-image: url("https://cdn.dribbble.com/users/941157/screenshots/15513050/media/6413f9fe3d03bd17202fcaebd2c8c2f9.jpeg?compress=1&resize=1200x900");
-  background-size: cover;
-    content: "";
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-  opacity: 0.5;
-  z-index: -1;
-} */
 
 #container .form-container {
   border-radius: 10px;
@@ -43,22 +44,22 @@ form label {
 }
 
 h1 {
-  font-weight: light;
+  font-weight: bolder;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   text-transform: uppercase !important;
   text-align: center;
   display: inline-block;
   justify-content: center;
   align-items: center;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 button {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
   background-color: #a37774;
   color: #ffffff;
-  font-size: 12px;
   font-weight: light;
   padding: 12px 45px;
   letter-spacing: 1px;
@@ -68,8 +69,8 @@ button {
   padding: 12px 20px;
   margin: 20px 0;
   width: 100%;
-  font-family: "Quicksand";
-  font-size: 12px;
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 15px;
 }
 
 button:active {
@@ -99,7 +100,7 @@ form {
 
 form label {
   color: #c2c2c5;
-  font-size: 14px;
+  font-size: 18px;
   display: flex;
   align-items: flex-start !important;
   margin-right: 200px;
@@ -107,12 +108,11 @@ form label {
 
 input {
   background-color: #cdb2ab;
-  border: none;
   padding: 12px 20px;
   margin-bottom: 20px;
   width: 100%;
   border-radius: 30x;
-  border: 1px solid "#2A3C2";
+  border: 1px solid #a37774;
   color: #ffffff;
 }
 
@@ -124,6 +124,10 @@ input {
 }
 
 input {
-  font-family: "Quicksand";
-  font-size: 15px;
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: "Julius Sans One", sans-serif !important;
 }
