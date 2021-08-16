@@ -19,6 +19,12 @@ const Navbar = () => {
         <input type="text" placeholder="Search" />
       </div>
       <DropdownMenu />
+      <Link to="/login" className="navbar-link-login">
+        Login
+      </Link>
+      <Link to="/register" className="navbar-link-register">
+        Register
+      </Link>
     </div>
   );
 };

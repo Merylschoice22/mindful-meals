@@ -34,12 +34,16 @@
 
 .second-section-input {
   width: 100%;
-  padding: 12px ;
-  margin: 8px 0;
-  box-sizing: border-box;
+  padding: 0;
 }
 
-input[type="text"]{
+.second-section-input input[type="text"] {
   font-family: "Quicksand";
-  font-size: 15px;
+  font-size: 18px;
+  background: transparent;
+  padding: 0.2rem;
+  font-size: clamp(1.4rem, 1.8vw, 1.6rem);
+  border-radius: 10px;
+  color: whitesmoke;
+  border: none;
 }
