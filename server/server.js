@@ -151,12 +151,9 @@ const pool = new Pool({
 
 require("./routes/auth.routes")(app);
 require("./routes/user.routes")(app);
-<<<<<<< HEAD
 require("./routes/post.routes")(app);
-=======
 require("./routes/foodfeed.routes")(app, pool);
 
->>>>>>> main
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
