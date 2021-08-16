@@ -171,4 +171,4 @@ app.delete("/myfoodposts/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-app.listen(3000, () => console.log("Server is up and running"));
+app.listen(8080, () => console.log("Server is up and running"));
