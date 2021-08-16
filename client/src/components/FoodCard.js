@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import ReservedPopup from "./ReservedPopup";
+import PopupInput from "./PopupInput";
 import "./FoodPostCard.css";
 import "./ReservedPopup.css";
+import "./PopupInput.css";
 
 const FoodCard = ({ postData }) => {
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="post">
       <div className="post-wrapper">
@@ -19,11 +26,11 @@ const FoodCard = ({ postData }) => {
           </div>
           <div className="post-top-right">
             <span className="post-location">{postData.loc_barrio}</span>
+            <p>Post Date</p>
           </div>
         </div>
         <div className="post-center">
           <span className="post-description-title">{postData.title}</span>
-          <p>Post Date</p>
           <p className="post-description">{postData.description}</p>
           <div className="image-box">
             <img
@@ -34,17 +41,21 @@ const FoodCard = ({ postData }) => {
           </div>
         </div>
         <div className="going-button">
-          <button
-            className="going-post-food-btn"
-            onClick={() => setButtonPopup(true)}
-          >
+          <button className="going-post-food-btn" onClick={togglePopup}>
             More info+
           </button>
-          <ReservedPopup
+          {isOpen && (
+            <PopupInput
+              content={<ReservedPopup postData={postData} />}
+              handleClose={togglePopup}
+            />
+          )}
+
+          {/* <ReservedPopup
             trigger={buttonPopup}
             setTrigger={setButtonPopup}
             postData={postData}
-          ></ReservedPopup>
+          ></ReservedPopup> */}
           <br></br>
         </div>
       </div>
