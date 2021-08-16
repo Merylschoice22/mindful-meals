@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FoodCard from "../components/FoodCard";
+import FoodCardMyMealPost from "../components/FoodCardMyMealPost";
 
 const MyFoodPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -28,7 +28,7 @@ const MyFoodPosts = () => {
       {posts.map((postData, index) => (
         <div className="___MYfoodcard" key={index}>
           {/* Make a new version of this card to reflect what the food giver should see */}
-          <FoodCard postData={postData} />
+          <FoodCardMyMealPost postData={postData} />
         </div>
       ))}
     </div>
