@@ -5,13 +5,10 @@ import Register from "./components/Register";
 import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
 import FoodPostCard from "./components/FoodPostCard";
-<<<<<<< HEAD
-=======
 import MyFoodPost from "./pages/MyFoodPost";
 import MyFood from "./pages/MyFood";
 import "./index.css";
 import "./App.css";
->>>>>>> main
 
 const App = () => {
   return (
