@@ -33,6 +33,7 @@ const FoodCard = ({ postData }) => {
           <span className="post-description-title">{postData.title}</span>
           <p className="post-description">{postData.description}</p>
           <div className="image-box">
+            {/* Implement Multer */}
             <img
               className="post-image"
               src="https://img.delicious.com.au/Kl8Gm8gM/del/2017/05/spiced-carrot-cake-with-labneh-icing-46402-2.jpg"
