@@ -12,7 +12,9 @@ const FoodCardMyMealPost = ({ postData }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            <span className="post-username">{postData.username}</span>
+            {/* //This could be the user who reserved the food
+            <span className="post-username">{postData.username}</span>  
+             */}
           </div>
           <div className="post-top-right">
             <span className="post-location">{postData.loc_barrio}</span>
