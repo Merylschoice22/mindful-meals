@@ -16,7 +16,9 @@ const FoodCardMyMealPost = ({ postData }) => {
           </div>
           <div className="post-top-right">
             <span className="post-location">{postData.loc_barrio}</span>
-            <p>Post Date</p>
+            <p className="post-location">{postData.loc_street}</p>
+
+            <p>{postData.post_date}</p>
           </div>
         </div>
         <div className="post-center">
@@ -32,6 +34,7 @@ const FoodCardMyMealPost = ({ postData }) => {
           </div>
         </div>
         <div className="going-button">
+          <button className="going-post-food-btn">Available</button>
           <button className="going-post-food-btn">Collected</button>
 
           <br></br>
