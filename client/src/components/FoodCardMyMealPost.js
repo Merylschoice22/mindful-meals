@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import "./FoodPostCard.css";
+import "./FoodCardMyMealPost.css";
 
 const FoodCardMyMealPost = ({ postData }) => {
+  const [status, setStatus] = useState("collected");
+
   return (
     <div className="post">
-      <div className="post-wrapper">
+      {/* <div className="post-wrapper"> */}
+      <div className={status}>
         <div className="post-top">
           <div className="post-top-left">
             <img
@@ -47,6 +50,7 @@ const FoodCardMyMealPost = ({ postData }) => {
           <button className="going-post-food-btn">Make Available again</button>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import "./FoodPostCard.css";
+import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData }) => {
+  const [status, setStatus] = useState("collected");
   return (
     <div className="post">
-      <div className="post-wrapper">
+      {/* <div className="post-wrapper"> */}
+      <div className={status}>
         <div className="post-top">
           <div className="post-top-left">
             <img
@@ -46,6 +48,7 @@ const FoodCardMyReserved = ({ postData }) => {
           <br></br>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };
