@@ -3,6 +3,13 @@ import "./FoodCardMyMealPost.css";
 
 const FoodCardMyMealPost = ({ postData }) => {
   const [status, setStatus] = useState("collected");
+  const statusCollected = () => {
+    setStatus("collected");
+  };
+
+  const statusAvailable = () => {
+    setStatus("available");
+  };
 
   return (
     <div className="post">
@@ -44,10 +51,20 @@ const FoodCardMyMealPost = ({ postData }) => {
           <p className="post-description">{postData.post_date}Date</p>
         </div>
         <div className="going-button">
-          <button className="going-post-food-btn">Collected</button>
+          <button
+            className="going-post-food-btn"
+            onClick={() => statusCollected()}
+          >
+            Collected
+          </button>
         </div>
         <div className="going-button">
-          <button className="going-post-food-btn">Make Available again</button>
+          <button
+            className="going-post-food-btn"
+            onClick={() => statusAvailable()}
+          >
+            Make Available again
+          </button>
         </div>
       </div>
       {/* </div> */}
