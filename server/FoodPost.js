@@ -55,9 +55,26 @@ app.get("/", (req, res) => {
 //Get all food posts that I have posted, in order of post by most recent
 //By my user ID
 //Validate user is signed in
-app.get("/myfoodposts/:userId", (req, res) => {
+app.get("/mymealposts/:userId", (req, res) => {
   const userId = 3; //Get user ID
-  const query = `SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.status FROM posts p WHERE p.users_id=${userId} order by p.post_date asc`;
+  const query = `SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.users_id=${userId} order by p.post_date asc`;
+  pool
+    .query(query)
+    .then((result) => {
+      //Validate user is signed in
+      res.json(result.rows);
+    })
+    .catch((error) => console.error(error));
+});
+
+//MyReservedFood - GET
+//Get all food posts that I have reserved, in order of post by most recent
+//By my user ID
+//Validate user is signed in
+app.get("/myreservedposts/:userId", (req, res) => {
+  const userId = 2; //Get user ID
+  const query = `SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.users_id=${userId} order by p.post_date asc`;
+
   pool
     .query(query)
     .then((result) => {
@@ -171,4 +188,4 @@ app.delete("/myfoodposts/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-app.listen(8080, () => console.log("Server is up and running"));
+app.listen(3000, () => console.log("Server is up and running"));
