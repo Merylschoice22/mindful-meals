@@ -11,7 +11,7 @@ function DropdownMenu() {
     <div className="container">
       <div className="menu-container">
         <button onClick={onClick} className="menu-trigger">
-          <span>My feed</span>
+          <span>My pages</span>
         </button>
         <nav
           ref={dropdownRef}
@@ -21,11 +21,11 @@ function DropdownMenu() {
             <section>
               <div className="link-style">
                 <div className="links">
-                  <Link to="" className="navbar-link">
+                  <Link to="/myfoodpost" className="navbar-link">
                     My Food Posts
                   </Link>
-                  <Link to="" className="navbar-link">
-                    My Food
+                  <Link to="/myfood" className="navbar-link">
+                    My Reserved Food
                   </Link>
                 </div>
               </div>

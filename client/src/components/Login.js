@@ -35,7 +35,7 @@ export default class Login extends Component {
         password: this.state.password,
       }),
     }).then((result) => {
-      if (result.status == 200) this.props.history.push("/");
+      if (result.status === 200) this.props.history.push("/");
       else alert("Sorry!, Something was incorrect!");
     });
   }
@@ -47,9 +47,15 @@ export default class Login extends Component {
           <form onSubmit={this.login}>
             <h1>Mindful Meals</h1>
             <label>Email address</label>
-            <input type="email" onChange={this.email} placeholder="Email" />
+            <input
+              type="email"
+              className="login-input"
+              onChange={this.email}
+              placeholder="Email"
+            />
             <label>Your password</label>
             <input
+              className="login-input1"
               type="password"
               onChange={this.password}
               placeholder="Password"

@@ -5,6 +5,10 @@ import Register from "./components/Register";
 import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
 import FoodPostCard from "./components/FoodPostCard";
+import MyFoodPost from "./pages/MyFoodPost";
+import MyFood from "./pages/MyFood";
+import "./index.css";
+import "./App.css";
 
 const App = () => {
   return (
@@ -19,6 +23,8 @@ const App = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/post" exact component={CreateFoodPost} />
           <Route path="/reserve" exact component={FoodPostCard} />
+          <Route path="/myfoodpost" exact component={MyFoodPost} />
+          <Route path="/myfood" exact component={MyFood} />
         </Switch>
       </div>
     </BrowserRouter>

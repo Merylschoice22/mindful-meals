@@ -1,15 +1,37 @@
 .popup {
-  border: 2px solid #ccc;
-  padding: 10px;
-  width: 400%;
-  border-radius: 10px;
-  box-shadow: 0px 0px 16px -8px #000000ad;
-  margin: 30px 5px 30px 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
 }
 
-.popup-inner {
-  background-color: rgb(246, 225, 225);
-  padding: 5px;
-  margin-bottom: 1em;
-  background-color: #84a59d;
+.inner-popup {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.reserve-post-information {
+  padding: 20px;
+  margin-left: 0;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 1);
+  background-color: #f7ede2;
+  overflow: auto;
+  overscroll-behavior: contain !important;
+ 
+}
+
+.reserve-post-information h3{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.command-intro p, .click-info {
+  font-size: 18px;
+}
+
+.personal-details-post-owner p {
+  font-weight: bold;
 }

@@ -42,7 +42,7 @@ function FoodPostCard() {
             className="going-post-food-btn"
             onClick={() => setButtonPopup(true)}
           >
-            Going!
+            More information
           </button>
           <ReservedPopup
             trigger={buttonPopup}
