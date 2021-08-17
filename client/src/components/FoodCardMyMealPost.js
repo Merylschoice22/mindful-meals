@@ -16,12 +16,7 @@ const FoodCardMyMealPost = ({ postData }) => {
             <span className="post-username">{postData.username}</span>  
              */}
           </div>
-          <div className="post-top-right">
-            <span className="post-location">{postData.loc_barrio}</span>
-            <p className="post-location">{postData.loc_street}</p>
-
-            <p>{postData.post_date}</p>
-          </div>
+          <div className="post-top-right"></div>
         </div>
         <div className="post-center">
           <span className="post-description-title">{postData.title}</span>
@@ -34,12 +29,22 @@ const FoodCardMyMealPost = ({ postData }) => {
               alt="Carrot cake"
             ></img>
           </div>
+          <span className="post-description">
+            Neighborhood: {postData.loc_barrio}
+          </span>
+          <p className="post-description">
+            Additional details of location: {postData.loc_street}
+          </p>
+          <p className="post-description">
+            Contact Phone number: {postData.phone}
+          </p>
+          <p className="post-description">{postData.post_date}Date</p>
         </div>
         <div className="going-button">
-          <button className="going-post-food-btn">Available</button>
           <button className="going-post-food-btn">Collected</button>
-
-          <br></br>
+        </div>
+        <div className="going-button">
+          <button className="going-post-food-btn">Make Available again</button>
         </div>
       </div>
     </div>
