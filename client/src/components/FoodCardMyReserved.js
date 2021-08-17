@@ -3,6 +3,9 @@ import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData }) => {
   const [status, setStatus] = useState("collected");
+  const statusAvailable = () => {
+    setStatus("available");
+  };
   return (
     <div className="post">
       {/* <div className="post-wrapper"> */}
@@ -43,7 +46,12 @@ const FoodCardMyReserved = ({ postData }) => {
           <p className="post-description">{postData.post_date}Date</p>
         </div>
         <div className="going-button">
-          <button className="going-post-food-btn">Cancel Reservation</button>
+          <button
+            className="going-post-food-btn"
+            onClick={() => statusAvailable()}
+          >
+            Cancel Reservation
+          </button>
 
           <br></br>
         </div>
