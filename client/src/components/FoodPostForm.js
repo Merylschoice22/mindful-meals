@@ -1,4 +1,4 @@
-import React, { useRef, useState, Component } from "react";
+import React, { Component } from "react";
 import ShareFoodPost from "../buttons/ShareFoodPost";
 import { withRouter } from "react-router-dom";
 import "./FoodPostForm.css";
@@ -55,7 +55,7 @@ class FoodPostForm extends Component {
         description: this.state.description,
       }),
     }).then((result) => {
-      if (result.status == 200) this.props.history.push("/");
+      if (result.status === 200) this.props.history.push("/");
       else alert("Sorry!, Something went wrong!");
     });
   }
