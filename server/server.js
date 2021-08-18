@@ -6,6 +6,7 @@ const db = require("./models");
 // importando role para usar en la funcion.
 const Role = db.role;
 const Posts = db.post;
+const Users = db.user;
 
 const app = express();
 
@@ -22,6 +23,21 @@ const initial = () => {
   Role.create({
     id: 3,
     name: "user",
+  });
+  Users.create({
+    username: "cmonlg",
+    email: "cmonlg@gmail.com",
+    password: "coffee123",
+  });
+  Users.create({
+    username: "moonia",
+    email: "enya.munteanu@gmail.com",
+    password: "frida123",
+  });
+  Users.create({
+    username: "merylschoice22",
+    email: "kekrieg.digital@gmail.com",
+    password: "sigamiga",
   });
 };
 
@@ -141,6 +157,8 @@ const PORT = process.env.PORT || 8080;
 // foo(app);
 const dbConfig = require("./config/db.config");
 const { Pool } = require("pg");
+const { user } = require("./models");
+const userRoutes = require("./routes/user.routes");
 const pool = new Pool({
   user: dbConfig.USER,
   host: dbConfig.HOST,
