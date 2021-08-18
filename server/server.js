@@ -29,7 +29,7 @@ const initialPostsTable = () => {
   Posts.create({
     title: "Pizza",
     loc_barrio: "Gracia",
-    loc_street: "Carrer de Rabassa no, 67",
+    loc_street: "Carrer de Rabassa",
     phone: "623 479 840",
     description:
       "I have a leftover cheese pizza from a party. Enough for two people",
@@ -37,7 +37,7 @@ const initialPostsTable = () => {
   Posts.create({
     title: "Carrot Cake",
     loc_barrio: "Sant Andreu de Palomar",
-    loc_street: "Carrer Malats, no 46",
+    loc_street: "Carrer Malats",
     phone: "623 474 908",
     description:
       "I would like to give away a vegan carrot cake that I baked this morning. Enough for four people :)",
@@ -45,7 +45,7 @@ const initialPostsTable = () => {
   Posts.create({
     title: "Cupcakes",
     loc_barrio: "Carmel",
-    loc_street: "Carrer de Ramon Rocafull, no 91",
+    loc_street: "Carrer de Ramon Rocafull",
     phone: "623 459 004",
     description:
       "I would like to give away some blueberry muffins. There are about 20 waiting to be shared",
@@ -53,23 +53,23 @@ const initialPostsTable = () => {
   Posts.create({
     title: "Chickpea Curry",
     loc_barrio: "Sant Marti",
-    loc_street: "",
+    loc_street: "Carrer de Sant Marti",
     phone: "637 908 625",
     description:
       "I would like to give away some blueberry muffins. There are about 20 waiting to be shared",
   });
   Posts.create({
     title: "Primavera Pasta Salad",
-    loc_barrio: "L'Eixample",
-    loc_street: "",
+    loc_barrio: "Eixample",
+    loc_street: "Arago con Girona",
     phone: "637 759 903",
     description:
       "I would like to give away a freshly made salad. Enough for two servings",
   });
   Posts.create({
     title: "Leftover lasagna 3 pieces",
-    loc_barrio: "Born, next to Arc de Triomf",
-    loc_street: "",
+    loc_barrio: "Born",
+    loc_street: "Next to Arc de Triomf",
     phone: "692 880 548",
     description:
       "I made lasagna and have 3 pieces leftover that I won't be able to finish. It is with meat, onions, and zucchini and bechamel cheese",
@@ -84,8 +84,8 @@ const initialPostsTable = () => {
   });
   Posts.create({
     title: "Grilled Salmon and mashed potatoes",
-    loc_barrio: "Compte Urgell & Floridablanca",
-    loc_street: "",
+    loc_barrio: "Sant Antoni",
+    loc_street: "Compte Urgell & Floridablanca",
     phone: "663 121 2198",
     description:
       "I have half of a grilled salmon piece and some mashed potatoes if anyone wants it",
@@ -93,7 +93,7 @@ const initialPostsTable = () => {
   Posts.create({
     title: "Extra chips and some drinks",
     loc_barrio: "Barceloneta",
-    loc_street: "",
+    loc_street: "Next to Salamanca",
     phone: "623 374 7444",
     description:
       "We had a party and there are leftover snacks. Everything has been opened except one bag of nuts. It's a few bags chips, some Coke, Coke Zero, and a Fanta Limon.",
