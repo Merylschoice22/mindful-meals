@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BtnCancelReservation from "../buttons/BtnCancelReservation";
 import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData }) => {
   const [status, setStatus] = useState(postData.status);
-  const statusAvailable = () => {
-    setStatus("available");
-  };
+  //   const handleStatus = () => {
+  //     setStatus("available");
+  //   };
+  //   useEffect(() => {
+  //     fetch("http://localhost:3000/status-available/:postId", {
+  //       method: "PATCH",
+  //       body: JSON.stringify({
+  //         completed: true,
+  //       }),
+  //       headers: {
+  //         "Content-type": "application/json; charset=UTF-8",
+  //       },
+  //     })
+  //       .then((res) => {
+  //         res.json();
+  //       })
+  //       .then(() => handleStatus)
+  //       .catch((error) => console.error(error));
+  //   }, []);
   return (
     <div className="post">
       {/* <div className="post-wrapper"> */}
@@ -46,7 +62,7 @@ const FoodCardMyReserved = ({ postData }) => {
 
           <p className="post-description">{postData.post_date}Date</p>
         </div>
-        <BtnCancelReservation statusAvailable={statusAvailable} />
+        <BtnCancelReservation handleClick={setStatus} />
       </div>
       {/* </div> */}
     </div>
