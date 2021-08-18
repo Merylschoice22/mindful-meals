@@ -11,9 +11,10 @@ const ReservedPopup = ({ postData }) => {
           <br></br>
           <div className="command-intro">
             <p>
-              You are one step away from reserving the food! The above
-              information belongs to the Food Giver and we would like to ask you
-              to contact the person using the following:
+              You are one step away from reserving your meal! The Food Giver has
+              provided some more details for collecting the food including their
+              phone number. Please contact them directly to arrange the pick-up.
+              You will have 30 minutes after clicking Reserve to contact them:
             </p>
             <br></br>
           </div>
@@ -32,7 +33,7 @@ const ReservedPopup = ({ postData }) => {
           </div>
           <br></br>
           <p className="click-info">
-            Click the button down below if everything sounds good for you{" "}
+            Click the button down below if everything sounds good for you!
           </p>
           <br></br>
           <button className="reserved-btn">Reserve</button>
