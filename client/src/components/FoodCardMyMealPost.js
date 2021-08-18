@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import BtnStatusAvailable from "../buttons/BtnStatusAvailable";
+import BtnStatusCollected from "../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";
 
 const FoodCardMyMealPost = ({ postData }) => {
@@ -8,6 +10,22 @@ const FoodCardMyMealPost = ({ postData }) => {
   };
 
   const statusAvailable = () => {
+    // useEffect(() => {
+    //   fetch("http://localhost:3000/status-available/:postId", {
+    //     method: "PATCH",
+    //     body: JSON.stringify({
+    //       completed: true,
+    //     }),
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //     },
+    //   })
+    //     .then((res) => {
+    //       res.json();
+    //     })
+    //     .then(() => setStatus("available"))
+    //     .catch((error) => console.error(error));
+    // }, []);
     setStatus("available");
   };
 
@@ -50,22 +68,8 @@ const FoodCardMyMealPost = ({ postData }) => {
           </p>
           <p className="post-description">{postData.post_date}Date</p>
         </div>
-        <div className="going-button">
-          <button
-            className="going-post-food-btn"
-            onClick={() => statusCollected()}
-          >
-            Collected
-          </button>
-        </div>
-        <div className="going-button">
-          <button
-            className="going-post-food-btn"
-            onClick={() => statusAvailable()}
-          >
-            Make Available again
-          </button>
-        </div>
+        <BtnStatusCollected statusCollected={statusCollected} />
+        <BtnStatusAvailable statusAvailable={statusAvailable} />
       </div>
       {/* </div> */}
     </div>
