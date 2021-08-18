@@ -5,11 +5,7 @@ import "../pages/FoodFeed.css";
 const MyFoodPosts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-<<<<<<< HEAD
-    fetch("http://localhost:3000/mymealposts/:userId")
-=======
     fetch("http://localhost:8080/myfoodposts/:userId")
->>>>>>> food-post-form
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
