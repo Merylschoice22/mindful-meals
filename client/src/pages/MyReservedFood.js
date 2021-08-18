@@ -6,6 +6,19 @@ import Navbar from "../components/navbar-links/Navbar";
 import "../pages/FoodFeed.css";
 
 const MyReservedFood = () => {
+<<<<<<< HEAD
+=======
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:8080/myfoodposts/:userId")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setPosts(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+>>>>>>> food-post-form
   return (
     <div className="food-feed">
       <h1>My Reserved Food</h1>
