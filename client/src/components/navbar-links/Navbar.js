@@ -16,7 +16,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="homepage-input-search">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" disabled />
       </div>
       <Link to="/" className="navbar-link-login">
         Home
