@@ -4,7 +4,7 @@ import FoodCard from "../components/FoodCard";
 const MyFoodPosts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/myfoodposts/:userId")
+    fetch("http://localhost:8080/myfoodposts/:userId")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
