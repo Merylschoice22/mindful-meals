@@ -8,7 +8,7 @@ import "../pages/FoodFeed.css";
 const MyReservedFood = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/myfoodposts/:userId")
+    fetch("http://localhost:8080/myreservedposts/:userId")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

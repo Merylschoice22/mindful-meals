@@ -4,7 +4,7 @@ import FoodCardMyReserved from "./FoodCardMyReserved";
 const MyReservedSection = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/myreservedposts/:userId")
+    fetch("http://localhost:8080/myreservedposts/:userId")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

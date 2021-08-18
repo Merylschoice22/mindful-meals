@@ -3,7 +3,7 @@ import FoodCardCollected from "./FoodCardCollected";
 const MyCollectedSection = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/mycollectedposts/:userId")
+    fetch("http://localhost:8080/mycollectedposts/:userId")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
