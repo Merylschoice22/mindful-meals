@@ -60,7 +60,7 @@ const FoodCardMyReserved = ({ postData }) => {
             Contact Phone number: {postData.phone}
           </p>
 
-          <p className="post-description">{postData.post_date}Date</p>
+          <p className="post-description">{postData.post_date}</p>
         </div>
         <BtnCancelReservation handleClick={setStatus} />
       </div>
