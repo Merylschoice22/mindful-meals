@@ -43,6 +43,7 @@ const initial = () => {
 
 const initialPostsTable = () => {
   Posts.create({
+    user_id: 1,
     title: "Pizza",
     loc_barrio: "Gracia",
     loc_street: "Carrer de Rabassa",
@@ -51,6 +52,8 @@ const initialPostsTable = () => {
       "I have a leftover cheese pizza from a party. Enough for two people",
   });
   Posts.create({
+    user_id: 2,
+
     title: "Carrot Cake",
     loc_barrio: "Sant Andreu de Palomar",
     loc_street: "Carrer Malats",
@@ -59,6 +62,8 @@ const initialPostsTable = () => {
       "I would like to give away a vegan carrot cake that I baked this morning. Enough for four people :)",
   });
   Posts.create({
+    user_id: 3,
+
     title: "Cupcakes",
     loc_barrio: "Carmel",
     loc_street: "Carrer de Ramon Rocafull",
@@ -67,6 +72,8 @@ const initialPostsTable = () => {
       "I would like to give away some blueberry muffins. There are about 20 waiting to be shared",
   });
   Posts.create({
+    user_id: 1,
+
     title: "Chickpea Curry",
     loc_barrio: "Sant Marti",
     loc_street: "Carrer de Sant Marti",
@@ -75,6 +82,8 @@ const initialPostsTable = () => {
       "I would like to give away some blueberry muffins. There are about 20 waiting to be shared",
   });
   Posts.create({
+    user_id: 2,
+
     title: "Primavera Pasta Salad",
     loc_barrio: "Eixample",
     loc_street: "Arago con Girona",
@@ -83,6 +92,8 @@ const initialPostsTable = () => {
       "I would like to give away a freshly made salad. Enough for two servings",
   });
   Posts.create({
+    user_id: 3,
+
     title: "Leftover lasagna 3 pieces",
     loc_barrio: "Born",
     loc_street: "Next to Arc de Triomf",
@@ -91,6 +102,8 @@ const initialPostsTable = () => {
       "I made lasagna and have 3 pieces leftover that I won't be able to finish. It is with meat, onions, and zucchini and bechamel cheese",
   });
   Posts.create({
+    user_id: 1,
+
     title: "AMAZING vegetable pasta",
     loc_barrio: "Eixample Dreta",
     loc_street: "Arago, con Bailen",
@@ -99,6 +112,8 @@ const initialPostsTable = () => {
       "Pasta with mixed vegetables and herbs. Bring your own tupperware container to put it in please!",
   });
   Posts.create({
+    user_id: 2,
+
     title: "Grilled Salmon and mashed potatoes",
     loc_barrio: "Sant Antoni",
     loc_street: "Compte Urgell & Floridablanca",
@@ -107,6 +122,8 @@ const initialPostsTable = () => {
       "I have half of a grilled salmon piece and some mashed potatoes if anyone wants it",
   });
   Posts.create({
+    user_id: 3,
+
     title: "Extra chips and some drinks",
     loc_barrio: "Barceloneta",
     loc_street: "Next to Salamanca",
@@ -115,6 +132,8 @@ const initialPostsTable = () => {
       "We had a party and there are leftover snacks. Everything has been opened except one bag of nuts. It's a few bags chips, some Coke, Coke Zero, and a Fanta Limon.",
   });
   Posts.create({
+    user_id: 1,
+
     title: "Vegetables",
     loc_barrio: "Eixample",
     loc_street: "Villaroel / Valencia",
