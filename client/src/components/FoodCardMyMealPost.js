@@ -4,7 +4,7 @@ import BtnStatusCollected from "../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";
 
 const FoodCardMyMealPost = ({ postData }) => {
-  const [status, setStatus] = useState("collected");
+  const [status, setStatus] = useState(postData.status);
   const statusCollected = () => {
     setStatus("collected");
   };

@@ -3,7 +3,7 @@ import BtnCancelReservation from "../buttons/BtnCancelReservation";
 import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData }) => {
-  const [status, setStatus] = useState("collected");
+  const [status, setStatus] = useState(postData.status);
   const statusAvailable = () => {
     setStatus("available");
   };
