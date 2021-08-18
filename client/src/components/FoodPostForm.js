@@ -73,6 +73,7 @@ class FoodPostForm extends Component {
               type="text"
               onChange={this.title}
               placeholder="Give your post a jazzy title. Ex: 'Delicious veggie salad for 2'"
+              required
             ></input>
             <br></br>
             <p className="post-label">Neighborhood</p>
@@ -81,6 +82,7 @@ class FoodPostForm extends Component {
               type="text"
               onChange={this.loc_barrio}
               placeholder="What neighborhood is the food in? Ex: 'Gracia'"
+              required
             ></input>
             <br></br>
             <p className="post-label">Specific Street or Crossing</p>
@@ -89,6 +91,7 @@ class FoodPostForm extends Component {
               type="text"
               onChange={this.loc_street}
               placeholder="Street / Cross streets / Any specific details. Ex: 'Arago con Bruc near the market'"
+              required
             ></input>
             <p className="post-label">Phone</p>
             <input
@@ -96,6 +99,7 @@ class FoodPostForm extends Component {
               type="text"
               onChange={this.phone}
               placeholder="Enter your phone number. Ex: 655 555 555"
+              required
             ></input>
             <br></br>
             <p className="post-label">Description</p>
@@ -104,6 +108,7 @@ class FoodPostForm extends Component {
               type="text"
               onChange={this.description}
               placeholder="Tell us about the food that you have. Ex: 'I made an extra large veggie salad and have enough to share for 2 people'"
+              required
             ></input>
             <br></br>
             <ShareFoodPost />
