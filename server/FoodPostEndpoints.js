@@ -27,8 +27,8 @@ app.get("/all", (req, res) => {
 //Where status is available
 app.get("/", (req, res) => {
   const query =
-    // "SELECT u.username, p.id, p.user_id, p.title, p.loc_barrio, p.description, p.post_date, p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
-    "SELECT * FROM posts";
+    "SELECT u.username, p.id, p.user_id, p.title, p.loc_barrio, p.description, p.post_date, p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
+  // "SELECT * FROM posts asc";
   pool
     .query(query)
     .then((result) => {
@@ -57,7 +57,7 @@ app.get("/", (req, res) => {
 //Validate user is signed in
 app.get("/mymealposts/:userId", (req, res) => {
   const userId = 3; //Get user ID
-  const query = `SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.users_id=${userId} order by p.post_date asc`;
+  const query = `SELECT p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.users_id=${userId} order by p.post_date desc`;
   pool
     .query(query)
     .then((result) => {

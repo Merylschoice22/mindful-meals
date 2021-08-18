@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      date: {
+      post_date: {
         type: Sequelize.DATE,
         defaultValue: Date.now(),
       },
@@ -27,8 +27,9 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
       },
       status: {
-        type: Sequelize.ENUM("Available", "Reserved", "Collected"),
-        defaultValue: "Available",
+        type: Sequelize.STRING,
+        // .ENUM("available", "reserved", "collected"),
+        // defaultValue: "available",
       },
     },
     { underscored: true }

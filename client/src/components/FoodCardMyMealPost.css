@@ -1,0 +1,173 @@
+/* .post-input > .post-label {
+  padding: 50px;
+  height: 50px;
+  width: 300px !important;
+}
+
+.share-btn {
+  background-color: #a37774 !important;
+} */
+
+.post {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overscroll-behavior: none;
+}
+
+/* .post-wrapper {
+  padding: 10px;
+  overflow: hidden;
+  display: fixed;
+  margin-left: 0;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin-bottom: 40px;
+  background-color: #cdb2ab;
+  margin-top: 10px;
+} */
+
+.available {
+  padding: 10px;
+  overflow: hidden;
+  display: fixed;
+  margin-left: 0;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin-bottom: 40px;
+  background-color: #cdb2ab;
+  margin-top: 10px;
+}
+.reserved {
+  padding: 10px;
+  overflow: hidden;
+  display: fixed;
+  margin-left: 0;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin-bottom: 40px;
+  background-color: rgba(147, 182, 131, 0.68);
+  margin-top: 10px;
+}
+
+.collected {
+  padding: 10px;
+  overflow: hidden;
+  display: fixed;
+  margin-left: 0;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin-bottom: 40px;
+  background-color: rgb(172, 172, 172);
+  margin-top: 10px;
+}
+
+.post-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-top-left {
+  display: flex;
+  align-items: center;
+}
+
+.post-profile-img {
+  margin-left: 20px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+}
+
+.post-username {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.post-location {
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.post-center {
+  margin: 20px 0;
+}
+
+.post-center .post-description-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-description-title {
+  margin-bottom: 20px;
+  font-family: "Nothing you could do";
+  color: #2a3c24 !important;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.image-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.post-image {
+  margin-top: 20px;
+  width: 85%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  height: auto;
+}
+
+.going-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.going-post-food-btn {
+  border-radius: 20px;
+  background-color: #a37774;
+  color: #ffffff;
+  font-weight: light;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  border: none;
+  padding: 12px 20px;
+  margin: 20px 0;
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 15px;
+  width: 85%;
+}
+
+.post-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-description,
+.post-location,
+.post-username {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold !important;
+}
+.post-top-right p {
+  padding-top: 16px;
+}

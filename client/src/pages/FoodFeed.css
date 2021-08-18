@@ -1,6 +1,7 @@
 .food-feed h1 {
   color: #2a3c24;
   padding: 50px;
+  margin-bottom: 0em;
   letter-spacing: 1px;
   text-transform: uppercase;
   display: flex;
@@ -28,4 +29,20 @@
 .food-feed {
   /* background-color: #f7ede2; */
   overscroll-behavior: none;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2em 0;
+}
+
+.text h2,
+.text h4 {
+  display: flex;
+  justify-content: center;
+  margin: 0.2em 0;
+  width: 80%;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
@@ -18,6 +18,7 @@ function Footer() {
               we just don't want to see it. The app would come as a movement
               into supporting people in need{" "}
             </p>
+            <p className="link">mindfulmeals@gmail.com</p>
           </div>
           <div className="footer-bottom">
             <p>
@@ -30,4 +31,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default Footer;
