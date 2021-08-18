@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BtnStatusAvailable from "../buttons/BtnStatusAvailable";
 import BtnStatusCollected from "../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";

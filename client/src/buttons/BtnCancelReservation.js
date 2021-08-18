@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../components/FoodCardMyReserved.css";
 
 const BtnCancelReservation = ({ handleClick }) => {
@@ -21,16 +21,16 @@ const BtnCancelReservation = ({ handleClick }) => {
       .then((res) => {
         res.json();
       })
-      .then(() => handleStatus)
+      .then((data) => {
+        console.log(data);
+        // handleStatus;
+      })
       .catch((error) => console.error(error));
   }, []);
 
   return (
     <div className="going-button">
-      <button
-        className="going-post-food-btn"
-        onClick={() => handleClick("available")}
-      >
+      <button className="going-post-food-btn" onClick={() => handleStatus()}>
         Cancel Reservation
       </button>
     </div>

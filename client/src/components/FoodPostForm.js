@@ -1,25 +1,8 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import ShareFoodPost from "../buttons/ShareFoodPost";
 import "./FoodPostForm.css";
 
 function FoodPostForm() {
-  const [posts, setPosts] = useState([]);
-  const form = useRef(null);
-  const submitPost = (e) => {
-    e.preventDefault();
-    const data = new FormData(form.current);
-    fetch("http://localhost:3000/new-post", {
-      method: "POST",
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        setPosts(json);
-      })
-      .catch((error) => console.error(error));
-  };
-
   return (
     <div className="food-post-form">
       <div className="food-post-wrapper">
