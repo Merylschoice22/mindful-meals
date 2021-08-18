@@ -50,6 +50,7 @@ const initialPostsTable = () => {
     phone: "623 479 840",
     description:
       "I have a leftover cheese pizza from a party. Enough for two people",
+    status: "available",
   });
   Posts.create({
     user_id: 2,
@@ -60,6 +61,7 @@ const initialPostsTable = () => {
     phone: "623 474 908",
     description:
       "I would like to give away a vegan carrot cake that I baked this morning. Enough for four people :)",
+    status: "available",
   });
   Posts.create({
     user_id: 3,
@@ -70,6 +72,7 @@ const initialPostsTable = () => {
     phone: "623 459 004",
     description:
       "I would like to give away some blueberry muffins. There are about 20 waiting to be shared",
+    status: "available",
   });
   Posts.create({
     user_id: 1,
@@ -80,6 +83,7 @@ const initialPostsTable = () => {
     phone: "637 908 625",
     description:
       "I would like to give away some blueberry muffins. There are about 20 waiting to be shared",
+    status: "reserved",
   });
   Posts.create({
     user_id: 2,
@@ -90,6 +94,7 @@ const initialPostsTable = () => {
     phone: "637 759 903",
     description:
       "I would like to give away a freshly made salad. Enough for two servings",
+    status: "reserved",
   });
   Posts.create({
     user_id: 3,
@@ -100,6 +105,7 @@ const initialPostsTable = () => {
     phone: "692 880 548",
     description:
       "I made lasagna and have 3 pieces leftover that I won't be able to finish. It is with meat, onions, and zucchini and bechamel cheese",
+    status: "reserved",
   });
   Posts.create({
     user_id: 1,
@@ -110,6 +116,7 @@ const initialPostsTable = () => {
     phone: "655 734 400",
     description:
       "Pasta with mixed vegetables and herbs. Bring your own tupperware container to put it in please!",
+    status: "collected",
   });
   Posts.create({
     user_id: 2,
@@ -120,6 +127,7 @@ const initialPostsTable = () => {
     phone: "663 121 2198",
     description:
       "I have half of a grilled salmon piece and some mashed potatoes if anyone wants it",
+    status: "collected",
   });
   Posts.create({
     user_id: 3,
@@ -130,6 +138,7 @@ const initialPostsTable = () => {
     phone: "623 374 7444",
     description:
       "We had a party and there are leftover snacks. Everything has been opened except one bag of nuts. It's a few bags chips, some Coke, Coke Zero, and a Fanta Limon.",
+    status: "collected",
   });
   Posts.create({
     user_id: 1,
@@ -140,6 +149,7 @@ const initialPostsTable = () => {
     phone: "646 885 5215",
     description:
       "Extra vegetables from the fridge that I won't be able to finish before they expire. 2 tomatoes, 1 onion, 4 potatoes, and half a green pepper",
+    status: "collected",
   });
 };
 

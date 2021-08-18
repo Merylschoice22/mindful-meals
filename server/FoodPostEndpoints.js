@@ -27,8 +27,8 @@ app.get("/all", (req, res) => {
 //Where status is available
 app.get("/", (req, res) => {
   const query =
-    // "SELECT u.username, p.id, p.user_id, p.title, p.loc_barrio, p.description, p.post_date, p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
-    "SELECT * FROM posts";
+    "SELECT u.username, p.id, p.user_id, p.title, p.loc_barrio, p.description, p.post_date, p.loc_street, p.phone FROM posts p INNER JOIN users u ON p.users_id = u.id WHERE p.status='available' order by p.post_date asc limit 5";
+  // "SELECT * FROM posts asc";
   pool
     .query(query)
     .then((result) => {
