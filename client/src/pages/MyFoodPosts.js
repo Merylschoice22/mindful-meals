@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FoodCardMyMealPost from "../components/FoodCardMyMealPost";
-
+import Navbar from "../components/navbar-links/Navbar";
+import "../pages/FoodFeed.css";
 const MyFoodPosts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -13,8 +14,10 @@ const MyFoodPosts = () => {
       .catch((error) => console.error(error));
   }, []);
   return (
-    <div>
+    <div className="food-feed">
       <h1>My Meal Posts</h1>
+      <Navbar />
+
       <h2>
         Below are all of the meals and info which you have posted to share with
         others
