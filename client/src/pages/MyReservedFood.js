@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
-import FoodCardMyReserved from "../components/FoodCardMyReserved";
+// import FoodCardMyReserved from "../components/FoodCardMyReserved";
+import MyReservedSection from "../components/MyReservedSection";
+import MyCollectedSection from "../components/MyCollectedSection";
 
 const MyReservedFood = () => {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:3000/myreservedposts/:userId")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setPosts(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
   return (
     <div>
       <h1>My Reserved Food</h1>
@@ -28,11 +20,9 @@ const MyReservedFood = () => {
         they reserve the right to release the item back to the Food Feed so
         others can reserve it.
       </h4>
-      {posts.map((postData, index) => (
-        <div className="___MYfoodcard" key={index}>
-          <FoodCardMyReserved postData={postData} />
-        </div>
-      ))}
+      <MyReservedSection />
+      <h3>Past Posts</h3>
+      <MyCollectedSection />
     </div>
   );
 };
