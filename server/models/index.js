@@ -37,7 +37,7 @@ db.user.belongsToMany(db.role, {
   otherKey: "roleId",
 });
 //belong to one, shouldbe change
-db.post.belongsTo(db.user);
+db.post.belongsTo(db.user, { foreignKey: "user_id" });
 
 db.ROLES = ["food giver", "admin", "food getter"];
 

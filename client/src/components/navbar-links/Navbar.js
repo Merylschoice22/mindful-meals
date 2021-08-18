@@ -16,15 +16,18 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="homepage-input-search">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" disabled />
       </div>
-      <DropdownMenu />
-      <Link to="/login" className="navbar-link-login">
-        Login
+      <Link to="/" className="navbar-link-login">
+        Home
       </Link>
       <Link to="/register" className="navbar-link-register">
         Register
       </Link>
+      <Link to="/login" className="navbar-link-login">
+        Login
+      </Link>
+      <DropdownMenu />
     </div>
   );
 };

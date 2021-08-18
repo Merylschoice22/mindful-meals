@@ -41,9 +41,12 @@
   font-family: "Quicksand";
   font-size: 18px;
   background: transparent;
-  padding: 0.2rem;
+  padding: 0rem 1rem;
+  margin: 0.7rem 3rem 0.7rem 0.7em;
+
+  width: 97%;
   font-size: clamp(1.4rem, 1.8vw, 1.6rem);
   border-radius: 10px;
   color: whitesmoke;
-  border: none;
+  border: 1px solid white;
 }
