@@ -17,7 +17,7 @@ const MyFoodPosts = () => {
     <div className="food-feed">
       <h1>My Meal Posts</h1>
       <Navbar />
-      <div className="food-feed">
+      <div className="text">
         <h2>
           Below are all of the meals and info which you have posted to share
           with others
