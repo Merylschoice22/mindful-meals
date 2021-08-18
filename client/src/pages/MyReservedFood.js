@@ -21,7 +21,7 @@ const MyReservedFood = () => {
         others can reserve it.
       </h4>
       <MyReservedSection />
-      <h3>Past Posts</h3>
+      <h3>Previous Meals</h3>
       <MyCollectedSection />
     </div>
   );

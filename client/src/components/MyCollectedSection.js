@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FoodCardMyReserved from "./FoodCardMyReserved";
-
+import FoodCardCollected from "./FoodCardCollected";
 const MyCollectedSection = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -17,7 +16,7 @@ const MyCollectedSection = () => {
     <div>
       {posts.map((postData, index) => (
         <div className="___MYfoodcard" key={index}>
-          <FoodCardMyReserved postData={postData} />
+          <FoodCardCollected postData={postData} />
         </div>
       ))}
     </div>
