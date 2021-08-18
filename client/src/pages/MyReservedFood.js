@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import FoodCardMyReserved from "../components/FoodCardMyReserved";
 import MyReservedSection from "../components/MyReservedSection";
 import MyCollectedSection from "../components/MyCollectedSection";
