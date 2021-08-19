@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
 import FoodPostCard from "./components/FoodPostCard";
-import MyFoodPosts from "./pages/MyFoodPosts";
+import MyMealPosts from "./pages/my-meal-posts/MyMealPosts";
 import MyReservedFood from "./pages/MyReservedFood";
 import "./index.css";
 import "./App.css";
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/post" exact component={CreateFoodPost} />
           <Route path="/reserve" exact component={FoodPostCard} />
-          <Route path="/my-food-posts" exact component={MyFoodPosts} />
+          <Route path="/my-meal-posts" exact component={MyMealPosts} />
           <Route path="/my-reserved-food" exact component={MyReservedFood} />
         </Switch>
       </div>
