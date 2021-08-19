@@ -201,6 +201,7 @@ require("./routes/user.routes")(app);
 require("./routes/post.routes")(app);
 require("./routes/foodfeed.routes")(app, pool);
 require("./routes/mymealposts.routes")(app, pool);
+require("./routes/myreservedfood.routes")(app, pool);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
