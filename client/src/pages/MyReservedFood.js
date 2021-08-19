@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import FoodCardMyReserved from "../components/FoodCardMyReserved";
 import MyReservedSection from "../components/MyReservedSection";
 import MyCollectedSection from "../components/MyCollectedSection";
 import Navbar from "../components/navbar-links/Navbar";
@@ -8,14 +7,17 @@ import "../pages/FoodFeed.css";
 const MyReservedFood = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/myreservedposts/:userId")
+    fetch(`http://localhost:8080/myreservedposts/:userId`)
+      //set with current logged in user ID
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPosts(data);
       })
       .catch((error) => console.error(error));
   }, []);
+  if (!posts) {
+    return <h3>Loading . . .</h3>;
+  }
   return (
     <div className="food-feed">
       <h1>My Reserved Food</h1>
@@ -35,9 +37,9 @@ const MyReservedFood = () => {
           Feed so others can reserve it.
         </h4>
       </div>
-      <MyReservedSection />
+      <MyReservedSection postsData={posts} />
       <h1 className="text">Previous Meals</h1>
-      <MyCollectedSection />
+      <MyCollectedSection postsData={posts} />
     </div>
   );
 };
