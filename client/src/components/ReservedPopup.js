@@ -1,4 +1,5 @@
 import React from "react";
+import BtnReserve from "../buttons/BtnReserve";
 import "./ReservedPopup.css";
 
 const ReservedPopup = ({ postData }) => {
@@ -36,7 +37,7 @@ const ReservedPopup = ({ postData }) => {
             Click the button down below if everything sounds good for you!
           </p>
           <br></br>
-          <button className="reserved-btn">Reserve</button>
+          <BtnReserve />
         </div>
       </div>
     </div>
