@@ -39,7 +39,7 @@ module.exports = (app, pool) => {
     pool
       .query(queryUPDATE, ["available", postId])
       .then(() => {
-        res.send("Food successfully unreserved!");
+        res.status(200).send("Food successfully unreserved!");
       })
       .catch((error) => console.error(error));
   });
