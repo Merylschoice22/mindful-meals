@@ -6,6 +6,7 @@ import "../pages/FoodFeed.css";
 
 const MyReservedFood = () => {
   const [posts, setPosts] = useState([]);
+  const [refresh, setRefresh] = useState("");
   useEffect(() => {
     fetch(`http://localhost:8080/myreservedposts/:userId`)
       //set with current logged in user ID
@@ -14,7 +15,7 @@ const MyReservedFood = () => {
         setPosts(data);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [refresh]);
   if (!posts) {
     return <h3>Loading . . .</h3>;
   }
@@ -37,7 +38,7 @@ const MyReservedFood = () => {
           Feed so others can reserve it.
         </h4>
       </div>
-      <MyReservedSection postsData={posts} />
+      <MyReservedSection postsData={posts} setRefresh={setRefresh} />
       <h1 className="text">Previous Meals</h1>
       <MyCollectedSection postsData={posts} />
     </div>
