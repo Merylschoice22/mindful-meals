@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
 //     .catch((error) => console.error(error));
 // });
 
-//MyFoodPosts - GET
+//MyMealPosts - GET
 //Get all food posts that I have posted, in order of post by most recent
 //By my user ID
 //Validate user is signed in
@@ -151,7 +151,7 @@ app.patch("/status-reserved/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//My Food - PATCH
+//My Reserved Food - PATCH
 //Click a button to cancel a reservation - update the status from reserved to available
 app.patch("/status-available/:postId", (req, res) => {
   const postId = 2;
@@ -164,7 +164,7 @@ app.patch("/status-available/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//MyFoodPosts - PATCH
+//MyMealPosts - PATCH
 //Click a button to update the status from reserved to collected
 app.patch("/status-collected/:postId", (req, res) => {
   const postId = req.params.postId;
@@ -177,7 +177,7 @@ app.patch("/status-collected/:postId", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-//MyFoodPosts - DELETE
+//MyMealsPosts - DELETE
 //Click a button to delete my post
 //Validate that user is logged in to see their food posts
 //Get the post id of the post they want to delete
