@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FoodCardMyReserved from "./FoodCardMyReserved";
 
-const MyReservedSection = () => {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:8080/myreservedposts/:userId")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setPosts(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
-
+const MyReservedSection = ({ postsData }) => {
   return (
     <div>
-      {posts.map((postData, index) => (
-        <div className="___MYfoodcard" key={index}>
-          <FoodCardMyReserved postData={postData} />
-        </div>
-      ))}
+      {postsData.map((post) => {
+        return (
+          post.status === "reserved" && (
+            <div className="___MYfoodcard" key={post.id}>
+              <FoodCardMyReserved postData={post} />
+            </div>
+          )
+        );
+      })}
     </div>
   );
 };
