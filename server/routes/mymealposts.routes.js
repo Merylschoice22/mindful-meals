@@ -1,5 +1,5 @@
 module.exports = (app, pool) => {
-  //GET
+  //GET my food posts that I have done based on my signed in ID
   //Validate user is signed in
   app.get("/mymealposts/:userId", (req, res) => {
     const userId = 3; //Get user ID
@@ -9,6 +9,18 @@ module.exports = (app, pool) => {
       .then((result) => {
         //Validate user is signed in
         res.json(result.rows);
+      })
+      .catch((error) => console.error(error));
+  });
+
+  //PATCH - Mark collected - Update status from reserved to collected
+  app.patch("/status-collected/:postId", (req, res) => {
+    const postId = req.params.postId;
+    const query = "UPDATE posts SET status=$1 WHERE id=$2";
+    pool
+      .query(query, ["collected", postId])
+      .then(() => {
+        res.status(200).send("Food successfully collected!");
       })
       .catch((error) => console.error(error));
   });
