@@ -2,8 +2,30 @@ import React from "react";
 import BtnReserve from "../buttons/BtnReserve";
 import "./ReservedPopup.css";
 
-const ReservedPopup = ({ postData }) => {
+const ReservedPopup = ({ postData, setRefresh }) => {
   //Separate the Location and Phone number with a bold font and space
+  // const [data, setData] = useState("");
+  const markReserved = () => {
+    fetch(`http://localhost:8080/status-reserved/${postData.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        completed: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // setData(data);
+        setRefresh(data);
+      })
+      .catch((error) => console.error(error));
+  };
+  // if (!data) {
+  //   return <h3>Loading . . .</h3>;
+  // }
+
   return (
     <div className="popup">
       <div className="inner-popup">
@@ -37,7 +59,7 @@ const ReservedPopup = ({ postData }) => {
             Click the button down below if everything sounds good for you!
           </p>
           <br></br>
-          <BtnReserve />
+          <BtnReserve handleClick={markReserved} />
         </div>
       </div>
     </div>
