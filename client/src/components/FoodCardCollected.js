@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./FoodCardMyReserved.css";
 
 const FoodCardCollected = ({ postData }) => {
-  const [status, setStatus] = useState(postData.status);
-
   return (
     <div className="post">
       {/* <div className="post-wrapper"> */}
-      <div className={status}>
+      <div className={postData.status}>
         <div className="post-top">
           <div className="post-top-left">
             <img
