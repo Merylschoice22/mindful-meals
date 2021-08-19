@@ -3,36 +3,54 @@ import BtnStatusAvailable from "../buttons/BtnStatusAvailable";
 import BtnStatusCollected from "../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";
 
-const FoodCardMyMealPost = ({ postData }) => {
-  const [status, setStatus] = useState(postData.status);
-  const statusCollected = () => {
-    setStatus("collected");
+const FoodCardMyMealPost = ({ postData, setRefresh }) => {
+  const [data, setData] = useState(postData);
+  const markAvailable = () => {
+    fetch(`http://localhost:8080/status-available/${postData.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        completed: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => {
+        res.json();
+      })
+      .then((data) => {
+        setData(data);
+        setRefresh(true);
+      })
+      .catch((error) => console.error(error));
   };
 
-  const statusAvailable = () => {
-    // useEffect(() => {
-    //   fetch("http://localhost:3000/status-available/:postId", {
-    //     method: "PATCH",
-    //     body: JSON.stringify({
-    //       completed: true,
-    //     }),
-    //     headers: {
-    //       "Content-type": "application/json; charset=UTF-8",
-    //     },
-    //   })
-    //     .then((res) => {
-    //       res.json();
-    //     })
-    //     .then(() => setStatus("available"))
-    //     .catch((error) => console.error(error));
-    // }, []);
-    setStatus("available");
+  const markCollected = () => {
+    fetch(`http://localhost:8080/status-collected/${postData.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        completed: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => {
+        res.json();
+      })
+      .then((data) => {
+        setData(data);
+        setRefresh(true);
+      })
+      .catch((error) => console.error(error));
   };
-
+  if (!data) {
+    return <h3>Loading . . .</h3>;
+  }
   return (
     <div className="post">
       {/* <div className="post-wrapper"> */}
-      <div className={status}>
+      <div className={data.status}>
         <div className="post-top">
           <div className="post-top-left">
             <img
@@ -41,14 +59,14 @@ const FoodCardMyMealPost = ({ postData }) => {
               alt=""
             ></img>
             {/* //This could be the user who reserved the food
-            <span className="post-username">{postData.username}</span>  
+            <span className="post-username">{data.username}</span>  
              */}
           </div>
           <div className="post-top-right"></div>
         </div>
         <div className="post-center">
-          <span className="post-description-title">{postData.title}</span>
-          <p className="post-description">{postData.description}</p>
+          <span className="post-description-title">{data.title}</span>
+          <p className="post-description">{data.description}</p>
           <div className="image-box">
             {/* Implement Multer */}
             <img
@@ -58,18 +76,16 @@ const FoodCardMyMealPost = ({ postData }) => {
             ></img>
           </div>
           <span className="post-description">
-            Neighborhood: {postData.loc_barrio}
+            Neighborhood: {data.loc_barrio}
           </span>
           <p className="post-description">
-            Additional details of location: {postData.loc_street}
+            Additional details of location: {data.loc_street}
           </p>
-          <p className="post-description">
-            Contact Phone number: {postData.phone}
-          </p>
-          <p className="post-description">{postData.post_date}</p>
+          <p className="post-description">Contact Phone number: {data.phone}</p>
+          <p className="post-description">{data.post_date}</p>
         </div>
-        <BtnStatusCollected statusCollected={statusCollected} />
-        <BtnStatusAvailable statusAvailable={statusAvailable} />
+        <BtnStatusCollected handleClick={markCollected} />
+        <BtnStatusAvailable handleClick={markAvailable} />
       </div>
       {/* </div> */}
     </div>
