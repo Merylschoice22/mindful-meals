@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FoodCardCollected from "./FoodCardCollected";
-const MyCollectedSection = () => {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:8080/mycollectedposts/:userId")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setPosts(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
-
+const MyCollectedSection = ({ postsData }) => {
   return (
     <div>
-      {posts.map((postData, index) => (
-        <div className="___MYfoodcard" key={index}>
-          <FoodCardCollected postData={postData} />
-        </div>
-      ))}
+      {postsData.map(
+        (post) =>
+          post.status === "collected" && (
+            <div className="___MYfoodcard" key={post.id}>
+              <FoodCardCollected postData={post} />
+            </div>
+          )
+      )}
     </div>
   );
 };
