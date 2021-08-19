@@ -6,7 +6,7 @@ import "./FoodPostCard.css";
 import "./ReservedPopup.css";
 import "./PopupInput.css";
 
-const FoodCard = ({ postData }) => {
+const FoodCard = ({ postData, setRefresh }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const togglePopup = () => {
@@ -49,7 +49,9 @@ const FoodCard = ({ postData }) => {
           </button>
           {isOpen && (
             <PopupInput
-              content={<ReservedPopup postData={postData} />}
+              content={
+                <ReservedPopup postData={postData} setRefresh={setRefresh} />
+              }
               handleClose={togglePopup}
             />
           )}
