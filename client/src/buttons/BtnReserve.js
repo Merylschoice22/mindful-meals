@@ -1,9 +1,12 @@
 import React from "react";
+import "../components/ReservedPopup.css";
 
-const BtnReserve = () => {
+const BtnReserve = ({ handleClick }) => {
   return (
     <div>
-      <button className="reserved-btn">Reserve</button>
+      <button className="reserved-btn" onClick={handleClick}>
+        Reserve
+      </button>
     </div>
   );
 };
