@@ -1,12 +1,9 @@
 import React from "react";
 
-const BtnStatusCollected = (props) => {
+const BtnStatusCollected = ({ handleClick }) => {
   return (
     <div className="going-button">
-      <button
-        className="going-post-food-btn"
-        onClick={() => props.statusCollected()}
-      >
+      <button className="going-post-food-btn" onClick={handleClick}>
         Collected
       </button>
     </div>
