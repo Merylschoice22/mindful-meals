@@ -31,4 +31,16 @@ module.exports = (app, pool) => {
       })
       .catch((error) => console.error(error));
   });
+
+  //PATCH - Cancel a reservation - Update status from reserved to available
+  app.patch("/status-available/:postId", (req, res) => {
+    const postId = 2; //Get postID from front
+    const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2";
+    pool
+      .query(queryUPDATE, ["available", postId])
+      .then(() => {
+        res.send("Food successfully unreserved!");
+      })
+      .catch((error) => console.error(error));
+  });
 };
