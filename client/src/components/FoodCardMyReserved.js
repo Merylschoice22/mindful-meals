@@ -3,30 +3,30 @@ import BtnCancelReservation from "../buttons/BtnCancelReservation";
 import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData }) => {
-  const [status, setStatus] = useState(postData.status);
-  //   const handleStatus = () => {
-  //     setStatus("available");
-  //   };
-  //   useEffect(() => {
-  //     fetch("http://localhost:3000/status-available/:postId", {
-  //       method: "PATCH",
-  //       body: JSON.stringify({
-  //         completed: true,
-  //       }),
-  //       headers: {
-  //         "Content-type": "application/json; charset=UTF-8",
-  //       },
-  //     })
-  //       .then((res) => {
-  //         res.json();
-  //       })
-  //       .then(() => handleStatus)
-  //       .catch((error) => console.error(error));
-  //   }, []);
+  const [data, setData] = useState(postData);
+  const handleReserve = () => {
+    fetch(`http://localhost:8080/status-available/${postData.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        completed: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => {
+        res.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="post">
       {/* <div className="post-wrapper"> */}
-      <div className={status}>
+      <div className={data.status}>
         <div className="post-top">
           <div className="post-top-left">
             <img
@@ -34,13 +34,13 @@ const FoodCardMyReserved = ({ postData }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            <span className="post-username">{postData.username}</span>
+            <span className="post-username">{data.username}</span>
           </div>
           <div className="post-top-right"></div>
         </div>
         <div className="post-center">
-          <span className="post-description-title">{postData.title}</span>
-          <p className="post-description">{postData.description}</p>
+          <span className="post-description-title">{data.title}</span>
+          <p className="post-description">{data.description}</p>
 
           <div className="image-box">
             {/* Implement Multer */}
@@ -51,18 +51,16 @@ const FoodCardMyReserved = ({ postData }) => {
             ></img>
           </div>
           <span className="post-description">
-            Neighborhood: {postData.loc_barrio}
+            Neighborhood: {data.loc_barrio}
           </span>
           <p className="post-description">
-            Additional details of location: {postData.loc_street}
+            Additional details of location: {data.loc_street}
           </p>
-          <p className="post-description">
-            Contact Phone number: {postData.phone}
-          </p>
+          <p className="post-description">Contact Phone number: {data.phone}</p>
 
-          <p className="post-description">{postData.post_date}</p>
+          <p className="post-description">{data.post_date}</p>
         </div>
-        <BtnCancelReservation handleClick={setStatus} />
+        <BtnCancelReservation handleClick={handleReserve} />
       </div>
       {/* </div> */}
     </div>
