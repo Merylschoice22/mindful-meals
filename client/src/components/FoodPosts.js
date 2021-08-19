@@ -14,21 +14,25 @@ const FoodPosts = () => {
 
   //Get & Set data
   const [posts, setPosts] = useState([]);
+  const [refresh, setRefresh] = useState("");
+
   useEffect(() => {
     fetch("http://localhost:8080/")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPosts(data);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [refresh]);
+  if (!posts) {
+    return <h3>Loading . . .</h3>;
+  }
 
   return (
     <div className="___mainfoodpostsbody">
-      {posts.slice(0, end).map((postData, index) => (
-        <div className="___foodcard" key={index}>
-          <FoodCard postData={postData} />
+      {posts.slice(0, end).map((postData) => (
+        <div className="___foodcard" key={postData.id}>
+          <FoodCard postData={postData} setRefresh={setRefresh} />
         </div>
       ))}
       <LoadingButton loadMore={loadMore} />
