@@ -85,7 +85,9 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
           <p className="post-description">{data.post_date}</p>
         </div>
         <BtnStatusCollected handleClick={markCollected} />
-        <BtnStatusAvailable handleClick={markAvailable} />
+        {data.status !== "available" && (
+          <BtnStatusAvailable handleClick={markAvailable} />
+        )}
       </div>
       {/* </div> */}
     </div>
