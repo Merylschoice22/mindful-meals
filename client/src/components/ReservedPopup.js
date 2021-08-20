@@ -15,7 +15,7 @@ const ReservedPopup = ({ postData, setRefresh }) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((data) => {
         // setData(data);
         setRefresh(data);

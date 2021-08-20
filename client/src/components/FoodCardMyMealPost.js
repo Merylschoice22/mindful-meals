@@ -16,7 +16,7 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
       },
     })
       .then((res) => {
-        res.json();
+        // res.json();
       })
       .then((data) => {
         setData(data);
@@ -36,7 +36,7 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
       },
     })
       .then((res) => {
-        res.json();
+        // res.json();
       })
       .then((data) => {
         setData(data);

@@ -15,7 +15,7 @@ const FoodCardMyReserved = ({ postData, setRefresh }) => {
       },
     })
       .then((res) => {
-        res.json();
+        // res.json();
       })
       .then((data) => {
         setData(data);
