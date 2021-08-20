@@ -55,6 +55,7 @@ class FoodPostForm extends Component {
         description: this.state.description,
       }),
     }).then((result) => {
+      this.props.setRefresh(this.props.refresh + 1);
       if (result.status === 200) this.props.history.push("/");
       else alert("Sorry!, Something went wrong!");
     });
