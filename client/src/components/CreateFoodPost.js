@@ -4,7 +4,7 @@ import PopupInput from "./PopupInput";
 import FoodPostForm from "./FoodPostForm";
 import "./CreateFoodPost.css";
 
-function CreateFoodPost() {
+const CreateFoodPost = ({ setRefresh, refresh }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const togglePopup = () => {
@@ -28,13 +28,18 @@ function CreateFoodPost() {
           </div>
           <br></br>
           {isOpen && (
-            <PopupInput content={<FoodPostForm />} handleClose={togglePopup} />
+            <PopupInput
+              content={
+                <FoodPostForm setRefresh={setRefresh} refresh={refresh} />
+              }
+              handleClose={togglePopup}
+            />
           )}
           <hr />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default CreateFoodPost;
