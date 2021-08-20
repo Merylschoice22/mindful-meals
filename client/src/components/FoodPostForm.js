@@ -41,6 +41,7 @@ class FoodPostForm extends Component {
 
   postfood(event) {
     event.preventDefault();
+    this.data = [];
     fetch("http://localhost:8080/new-post", {
       //to specify what the backend expest to receive
       headers: {
@@ -57,8 +58,7 @@ class FoodPostForm extends Component {
     }).then((result) => {
       this.props.setRefresh(this.props.refresh + 1);
       if (result.status === 200)
-        this.props.history.push("/") &&
-          result.send("Food successfully posted!");
+        this.props.history.push("/") && this.setData(result);
       else alert("Sorry! Something went wrong!");
     });
   }
@@ -114,6 +114,7 @@ class FoodPostForm extends Component {
               required
             ></input>
             <br></br>
+            {this.data && <h2>Food successfully posted!</h2>}
             <ShareFoodPost />
           </form>
         </div>
