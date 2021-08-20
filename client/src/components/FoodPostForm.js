@@ -56,8 +56,10 @@ class FoodPostForm extends Component {
       }),
     }).then((result) => {
       this.props.setRefresh(this.props.refresh + 1);
-      if (result.status === 200) this.props.history.push("/");
-      else alert("Sorry!, Something went wrong!");
+      if (result.status === 200)
+        this.props.history.push("/") &&
+          result.send("Food successfully posted!");
+      else alert("Sorry! Something went wrong!");
     });
   }
 
