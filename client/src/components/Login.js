@@ -56,6 +56,7 @@ export default class Login extends Component {
               className="login-input"
               onChange={this.email}
               placeholder="Email"
+              required
             />
             <label>Your password</label>
             <input
@@ -63,6 +64,7 @@ export default class Login extends Component {
               type="password"
               onChange={this.password}
               placeholder="Password"
+              required
             />
             <button>Submit</button>
             <div>

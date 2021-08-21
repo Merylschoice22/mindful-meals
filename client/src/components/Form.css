@@ -1,14 +1,20 @@
 ::-webkit-input-placeholder {
-	/* Change placeholder styles.*/
-	color: white !important;
+  /* Change placeholder styles.*/
+  color: white !important;
 }
 
 .form-control {
-	background-color: #cdb2ab !important;
-	padding: 25px;
+  background-color: #cdb2ab !important;
+  padding: 25px;
 }
 
 .submit {
-	background-color: #a37774;
-	border: none;
+  background-color: #a37774;
+  border: none;
+}
+
+p,
+a {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2em;
 }
