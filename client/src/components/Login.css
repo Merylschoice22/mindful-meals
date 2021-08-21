@@ -131,3 +131,9 @@ input {
 h1 {
   font-family: "Julius Sans One", sans-serif !important;
 }
+
+p,
+a {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2em;
+}
