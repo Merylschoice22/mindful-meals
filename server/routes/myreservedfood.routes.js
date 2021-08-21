@@ -1,7 +1,9 @@
+const { authJwt } = require("../middleware"); //check
+
 module.exports = (app, pool) => {
-  app.get("/myreservedposts/:userId", (req, res) => {
-    const userId = 3;
-    const query = `SELECT p.id, p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.user_id=${userId} order by p.post_date asc`;
+  app.get("/myreservedposts", authJwt.verifyToken, (req, res) => {
+    const userId = req.userId;
+    const query = `SELECT p.id, p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.reserved_by_user_id=$1 order by p.post_date asc`;
 
     pool
       .query(query)
@@ -14,12 +16,12 @@ module.exports = (app, pool) => {
   });
 
   //PATCH - Cancel a reservation - Update status from reserved to available
-  app.patch("/status-available/:postId", (req, res) => {
+  app.patch("/status-available/:postId", authJwt.verifyToken, (req, res) => {
     const postId = req.params.postId; //Get postID from front
     console.log(postId);
-    const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2";
+    const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2 and user_id=$3";
     pool
-      .query(queryUPDATE, ["available", postId])
+      .query(queryUPDATE, ["available", postId, req.userId])
       .then(() => {
         res.status(200).send("Food successfully unreserved!");
       })
