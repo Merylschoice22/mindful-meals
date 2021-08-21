@@ -1,18 +1,20 @@
 import React from "react";
-import FoodCardCollected from "./FoodCardCollected";
-const MyCollectedSection = ({ postsData }) => {
+import FoodCardCollected from "../../components/FoodCardCollected";
+
+const SectionMyPostHistory = ({ postsData }) => {
   return (
     <div>
-      {postsData.map(
-        (post) =>
+      {postsData.map((post) => {
+        return (
           post.status === "collected" && (
             <div className="___MYfoodcard" key={post.id}>
               <FoodCardCollected postData={post} />
             </div>
           )
-      )}
+        );
+      })}
     </div>
   );
 };
 
-export default MyCollectedSection;
+export default SectionMyPostHistory;

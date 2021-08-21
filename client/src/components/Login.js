@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 export default class Login extends Component {
@@ -36,7 +37,10 @@ export default class Login extends Component {
       }),
     }).then((result) => {
       if (result.status === 200) this.props.history.push("/");
-      else alert("Sorry!, Something was incorrect!");
+      else
+        alert(
+          "Sorry! Something was incorrect. Please check the information you have typed and try again!"
+        );
     });
   }
 
@@ -52,6 +56,7 @@ export default class Login extends Component {
               className="login-input"
               onChange={this.email}
               placeholder="Email"
+              required
             />
             <label>Your password</label>
             <input
@@ -59,8 +64,13 @@ export default class Login extends Component {
               type="password"
               onChange={this.password}
               placeholder="Password"
+              required
             />
             <button>Submit</button>
+            <div>
+              <p>Don't have an account?</p>
+              <Link to="/register">Register here!</Link>
+            </div>
           </form>
         </div>
       </div>

@@ -2,31 +2,34 @@ import React, { useState } from "react";
 import BtnCancelReservation from "../buttons/BtnCancelReservation";
 import "./FoodCardMyReserved.css";
 
-const FoodCardMyReserved = ({ postData }) => {
-  const [status, setStatus] = useState(postData.status);
-  //   const handleStatus = () => {
-  //     setStatus("available");
-  //   };
-  //   useEffect(() => {
-  //     fetch("http://localhost:3000/status-available/:postId", {
-  //       method: "PATCH",
-  //       body: JSON.stringify({
-  //         completed: true,
-  //       }),
-  //       headers: {
-  //         "Content-type": "application/json; charset=UTF-8",
-  //       },
-  //     })
-  //       .then((res) => {
-  //         res.json();
-  //       })
-  //       .then(() => handleStatus)
-  //       .catch((error) => console.error(error));
-  //   }, []);
+const FoodCardMyReserved = ({ postData, setRefresh }) => {
+  const [data, setData] = useState(postData);
+  const handleCancel = () => {
+    fetch(`http://localhost:8080/status-available/${postData.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        completed: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => {
+        // res.json();
+      })
+      .then((data) => {
+        setData(data);
+        setRefresh(true);
+      })
+      .catch((error) => console.error(error));
+  };
+  if (!data) {
+    return <h3>Loading . . .</h3>;
+  }
   return (
     <div className="post">
       {/* <div className="post-wrapper"> */}
-      <div className={status}>
+      <div className={postData.status}>
         <div className="post-top">
           <div className="post-top-left">
             <img
@@ -62,7 +65,7 @@ const FoodCardMyReserved = ({ postData }) => {
 
           <p className="post-description">{postData.post_date}</p>
         </div>
-        <BtnCancelReservation handleClick={setStatus} />
+        <BtnCancelReservation handleClick={handleCancel} />
       </div>
       {/* </div> */}
     </div>

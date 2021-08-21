@@ -1,7 +1,7 @@
 import React from "react";
 import "./PopupInput.css";
 
-function PopupInput(props) {
+const PopupInput = (props) => {
   return (
     <div className="popup-box">
       <div className="box">
@@ -12,6 +12,6 @@ function PopupInput(props) {
       </div>
     </div>
   );
-}
+};
 
 export default PopupInput;

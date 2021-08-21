@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Form.css";
 
 //const Register = () => {
@@ -43,7 +44,7 @@ export default class Register extends Component {
       }),
     }).then((result) => {
       if (result.status === 200) this.props.history.push("/Login");
-      else alert("Sorry!, User is already taken!");
+      else alert("Sorry! Username or password already exists!");
     });
   }
 
@@ -58,16 +59,27 @@ export default class Register extends Component {
               type="username"
               onChange={this.username}
               placeholder="Enter your username"
+              required
             />
             <label>Your Email address</label>
-            <input type="email" onChange={this.email} placeholder="Email" />
+            <input
+              type="email"
+              onChange={this.email}
+              placeholder="Email"
+              required
+            />
             <label>Pick a password</label>
             <input
               type="password"
               onChange={this.password}
               placeholder="Password"
+              required
             />
             <button>Submit</button>
+            <div>
+              <p>Already have an account?</p>
+              <Link to="/login">Log in here!</Link>
+            </div>
           </form>
         </div>
       </div>
