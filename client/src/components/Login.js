@@ -37,7 +37,10 @@ export default class Login extends Component {
       }),
     }).then((result) => {
       if (result.status === 200) this.props.history.push("/");
-      else alert("Sorry!, Something was incorrect!");
+      else
+        alert(
+          "Sorry! Something was incorrect. Please check the information you have typed and try again!"
+        );
     });
   }
 
