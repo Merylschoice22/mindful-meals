@@ -1,3 +1,5 @@
+// const { authJwt } = require("../middleware");
+
 module.exports = function (app, pool) {
   //GET all posts
   app.get("/", (req, res) => {
