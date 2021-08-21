@@ -1,4 +1,5 @@
 const controller = require("../controllers/post.controller");
+const { authJwt } = require("../middleware");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -9,5 +10,5 @@ module.exports = function (app) {
     next();
   });
 
-  app.post("/new-post", controller.postfood);
+  app.post("/new-post", authJwt.verifyToken, controller.postfood);
 };
