@@ -4,7 +4,7 @@ module.exports = (app, pool) => {
   //GET my food posts that I have done based on my signed in ID
   app.get("/mymealposts/", authJwt.verifyToken, (req, res) => {
     const userId = req.userId;
-    const query = `SELECT p.user_id, p.reserved_by_user_id, u.username, p.id, p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p full outer JOIN users u ON p.reserved_by_user_id=u.id where p.user_id = 2 order by p.created_at desc`;
+    const query = `SELECT p.user_id, p.reserved_by_user_id, u.username, p.id, p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p full outer JOIN users u ON p.reserved_by_user_id=u.id where p.user_id = ${userId} order by p.created_at desc`;
     pool
       .query(query)
       .then((result) => {
