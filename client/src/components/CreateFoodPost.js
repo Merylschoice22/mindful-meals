@@ -12,22 +12,24 @@ const CreateFoodPost = ({ setRefresh, refresh }) => {
   };
 
   const imageHandler = (event) => {
+    // const [uploadStatus, setUploadStatus] = useState("");
     const file = event.target.files[0];
     const formData = new FormData();
-    formData.append("image", file);
+    formData.append("file", file);
 
-    fetch(`http://localhost:8080/new-post`, {
+    fetch(`http://localhost:8080/upload`, {
       method: "POST",
       body: formData,
       headers: {
         Accept: "multipart/form-data",
+        "Access-Control-Allow-Credentials": "true",
       },
       credentials: "include",
     })
       .then((res) => res.json())
-      .then((res) => {
-        setUploadStatus(res.msg);
-      })
+      // .then((res) => {
+      //   setUploadStatus(res.msg);
+      // })
       .catch((error) => {
         console.error(error);
       });
@@ -52,7 +54,11 @@ const CreateFoodPost = ({ setRefresh, refresh }) => {
           {isOpen && (
             <PopupInput
               content={
-                <FoodPostForm setRefresh={setRefresh} refresh={refresh} />
+                <FoodPostForm
+                  setRefresh={setRefresh}
+                  refresh={refresh}
+                  imageHandler={imageHandler}
+                />
               }
               handleClose={togglePopup}
             />

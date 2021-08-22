@@ -17,9 +17,11 @@ exports.postfood = (req, res) => {
     phone: req.body.phone,
     description: req.body.description,
     status: req.body.status,
+    //image_id: req.image_id,
   })
     .then((post) => {
       res.send(post);
+      return res.send(`Food post has been uploaded.`);
     })
     .catch((err) => {
       res.status(500).send({ message: err.message });

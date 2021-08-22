@@ -42,6 +42,10 @@ db.post.belongsTo(db.user, { foreignKey: "user_id" });
 
 db.images.belongsTo(db.user, { foreignKey: "user_id" });
 
+// db.images.belongsTo(db.post, { foreignKey: "post_id" });
+
+db.post.belongsTo(db.images, { foreignKey: "image_id" });
+
 db.ROLES = ["food giver", "admin", "food getter"];
 
 module.exports = db;

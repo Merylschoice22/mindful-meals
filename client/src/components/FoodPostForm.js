@@ -114,6 +114,14 @@ class FoodPostForm extends Component {
               required
             ></input>
             <br></br>
+            <input
+              type="file"
+              name="file"
+              accept="image/*"
+              multiple={false}
+              onChange={this.props.imageHandler}
+            />
+            <br></br>
             {this.data && <h2>Food successfully posted!</h2>}
             <ShareFoodPost />
           </form>
