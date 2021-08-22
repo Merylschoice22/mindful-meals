@@ -16,7 +16,6 @@ const FoodFeed = () => {
   //Get & Set data
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState(0);
-  console.log("This is posts before fetch", posts);
   useEffect(() => {
     authFetch("http://localhost:8080/")
       .then((res) => res.json())
@@ -26,9 +25,8 @@ const FoodFeed = () => {
       })
       .catch((error) => console.error(error));
   }, [refresh]);
-  console.log("This is the new posts after fetch", posts);
   if (!posts) {
-    return <h3>Loading . . .</h3>;
+    return <h3></h3>;
   }
   return (
     <div className="food-feed">
