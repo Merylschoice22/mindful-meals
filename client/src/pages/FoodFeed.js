@@ -11,10 +11,8 @@ import "./FoodFeed.css";
 // import FoodCard from "../components/FoodCard";
 import Footer from "../components/Footer";
 import "../components/Footer.css";
-import authAction from "../utils/authAction";
 
 const FoodFeed = () => {
-  authAction();
   //Get & Set data
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState(0);
@@ -30,21 +28,23 @@ const FoodFeed = () => {
   if (!posts) {
     return <h3> </h3>;
   }
+  const accessToken = localStorage.getItem("accessToken");
 
   return (
     <div className="food-feed">
       <h1>Welcome to Mindful Meals</h1>
       <Navbar />
-      {/* Popup Input Component */}
-      <CreateFoodPost setRefresh={setRefresh} refresh={refresh} />
-      {/* User Food Cards */}
-      {/* <FoodCard  I think we wanna delete this /> */}
+      {accessToken ? (
+        <div>
+          <CreateFoodPost setRefresh={setRefresh} refresh={refresh} />
+          <FoodPosts setRefresh={setRefresh} posts={posts} />
+        </div>
+      ) : (
+        <div>
+          <h1>Please sign in so you can see the feed!</h1>
+        </div>
+      )}
 
-      {/* <FoodPostCard />
-      <ExtraFoodCardOne />
-      <ExtraFoodCardTwo />
-      <LoadingButton I think we wanna delete this too/> */}
-      <FoodPosts setRefresh={setRefresh} posts={posts} />
       <Footer />
     </div>
   );

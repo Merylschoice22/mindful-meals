@@ -4,6 +4,8 @@ import "../navbar-links/Navbar.css";
 import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
+  const accessToken = localStorage.getItem("accessToken");
+
   return (
     <div className="navbar">
       <div className="navbar-left">
@@ -21,15 +23,20 @@ const Navbar = () => {
       <Link to="/" className="navbar-link-login">
         Home
       </Link>
-      <Link to="/register" className="navbar-link-register">
-        Register
-      </Link>
-      <Link to="/login" className="navbar-link-login">
-        Log in
-      </Link>
-      <Link to="/logout" className="navbar-link-login">
-        Log out
-      </Link>
+      {!accessToken ? (
+        <div>
+          <Link to="/register" className="navbar-link-register">
+            Register
+          </Link>
+        </div>
+      ) : null}
+      {!accessToken ? (
+        <div>
+          <Link to="/login" className="navbar-link-login">
+            Log in
+          </Link>
+        </div>
+      ) : null}
       <DropdownMenu />
     </div>
   );
