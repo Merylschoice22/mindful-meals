@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import authFetch from "../utils/authFetch";
 import MyReservedSection from "../components/MyReservedSection";
 import MyCollectedSection from "../components/MyCollectedSection";
 import Navbar from "../components/navbar-links/Navbar";
@@ -8,8 +9,7 @@ const MyReservedFood = () => {
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState("");
   useEffect(() => {
-    fetch(`http://localhost:8080/myreservedposts/:userId`)
-      //set with current logged in user ID
+    authFetch(`http://localhost:8080/myreservedposts/`)
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
