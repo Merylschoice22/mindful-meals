@@ -27,17 +27,17 @@ const initial = () => {
   Users.create({
     username: "cmonlg",
     email: "cmonlg@gmail.com",
-    password: "coffee123",
+    password: "$2a$08$OGgduM951kW90X7PK04rMuezT4HYuq/zsQneyp3TEQuAiAt1eUeBC", //coffee123
   });
   Users.create({
     username: "moonia",
     email: "enya.munteanu@gmail.com",
-    password: "frida123",
+    password: "$2a$08$0P6iZf9qHytxoA8/GMrWoumTG9K09bSI5kW7arjTpWiYrBCNuFASe", //frida123
   });
   Users.create({
     username: "merylschoice22",
     email: "kekrieg.digital@gmail.com",
-    password: "sigamiga",
+    password: "$2a$08$Ij2DdSft0tqmdoxvFBVI/e2NVxvDnEvQ37vvSYSwPtiWG/tvxF0aq", //sigamiga
   });
 };
 
@@ -154,11 +154,11 @@ const initialPostsTable = () => {
 };
 
 // method to generate database tables.
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-  initial();
-  initialPostsTable();
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+//   initial();
+//   initialPostsTable();
+// });
 
 //here must be placed the website url/frontend
 var corsOptions = {
