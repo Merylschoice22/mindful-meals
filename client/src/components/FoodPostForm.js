@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ShareFoodPost from "../buttons/ShareFoodPost";
 import { withRouter } from "react-router-dom";
+import authFetch from "../utils/authFetch";
 import "./FoodPostForm.css";
 
 class FoodPostForm extends Component {
@@ -42,7 +43,8 @@ class FoodPostForm extends Component {
   postfood(event) {
     event.preventDefault();
     this.data = [];
-    fetch("http://localhost:8080/new-post", {
+
+    authFetch("http://localhost:8080/new-post", {
       //to specify what the backend expest to receive
       headers: {
         "Content-Type": "application/json",

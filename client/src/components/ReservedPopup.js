@@ -1,4 +1,5 @@
 import React from "react";
+import authFetch from "../utils/authFetch";
 import BtnReserve from "../buttons/BtnReserve";
 import "./ReservedPopup.css";
 
@@ -6,7 +7,7 @@ const ReservedPopup = ({ postData, setRefresh }) => {
   //Separate the Location and Phone number with a bold font and space
   // const [data, setData] = useState("");
   const markReserved = () => {
-    fetch(`http://localhost:8080/status-reserved/${postData.id}`, {
+    authFetch(`http://localhost:8080/status-reserved/${postData.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         completed: true,

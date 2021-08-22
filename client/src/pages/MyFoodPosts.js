@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import authFetch from "../utils/authFetch";
 import FoodCardMyMealPost from "../components/FoodCardMyMealPost";
 import Navbar from "../components/navbar-links/Navbar";
 import "../pages/FoodFeed.css";
 const MyFoodPosts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/mymealposts/:userId")
+    authFetch("http://localhost:8080/mymealposts/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

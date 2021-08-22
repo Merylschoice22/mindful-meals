@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import authFetch from "../utils/authFetch";
 import Navbar from "../components/navbar-links/Navbar";
 //import FoodPostCard from "../components/FoodPostCard";
 import CreateFoodPost from "../components/CreateFoodPost";
@@ -17,7 +18,7 @@ const FoodFeed = () => {
   const [refresh, setRefresh] = useState(0);
   console.log("This is posts before fetch", posts);
   useEffect(() => {
-    fetch("http://localhost:8080/")
+    authFetch("http://localhost:8080/")
       .then((res) => res.json())
       .then((data) => {
         console.log("this is the fetched data", data);

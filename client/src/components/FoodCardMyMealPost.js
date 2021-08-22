@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import authFetch from "../utils/authFetch";
 import BtnStatusAvailable from "../buttons/BtnStatusAvailable";
 import BtnStatusCollected from "../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";
@@ -6,7 +7,7 @@ import "./FoodCardMyMealPost.css";
 const FoodCardMyMealPost = ({ postData, setRefresh }) => {
   const [data, setData] = useState(postData);
   const markAvailable = () => {
-    fetch(`http://localhost:8080/status-available/${postData.id}`, {
+    authFetch(`http://localhost:8080/status-available/${postData.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         completed: true,
@@ -26,7 +27,7 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
   };
 
   const markCollected = () => {
-    fetch(`http://localhost:8080/status-collected/${postData.id}`, {
+    authFetch(`http://localhost:8080/status-collected/${postData.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         completed: true,
