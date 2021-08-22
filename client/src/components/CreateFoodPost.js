@@ -11,6 +11,28 @@ const CreateFoodPost = ({ setRefresh, refresh }) => {
     setIsOpen(!isOpen);
   };
 
+  const imageHandler = (event) => {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+
+    fetch(`http://localhost:8080/new-post`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "multipart/form-data",
+      },
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setUploadStatus(res.msg);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="container">
       <div className="make-food-post-popup">

@@ -24,6 +24,7 @@ db.sequelize = sequelize;
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
 db.post = require("../models/post.model.js")(sequelize, Sequelize);
+db.images = require("./image.model.js")(sequelize, Sequelize);
 
 // Belongs.
 db.role.belongsToMany(db.user, {
@@ -38,6 +39,8 @@ db.user.belongsToMany(db.role, {
 });
 //belong to one, shouldbe change
 db.post.belongsTo(db.user, { foreignKey: "user_id" });
+
+db.images.belongsTo(db.user, { foreignKey: "user_id" });
 
 db.ROLES = ["food giver", "admin", "food getter"];
 

@@ -1,12 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const multer = require("multer");
 // Importing models
 const db = require("./models");
 // importando role para usar en la funcion.
 const Role = db.role;
 const Posts = db.post;
 const Users = db.user;
+const Images = db.image;
 
 const app = express();
 
@@ -160,6 +162,17 @@ db.sequelize.sync({ force: true }).then(() => {
   initialPostsTable();
 });
 
+//Multer, another way
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "./");
+//   },
+//   filename: function (req, file, cb) {
+//     const ext = file.mimetype.split("/")[1];
+//     cb(null, `uploads/${file.originalname}-${Date.now()}.${ext}`);
+//   },
+// });
+
 //here must be placed the website url/frontend
 var corsOptions = {
   origin: "http://localhost:3000",
@@ -195,10 +208,14 @@ const pool = new Pool({
   password: dbConfig.PASSWORD,
   port: dbConfig.PORT,
 });
+// const upload = multer({
+//   storage: storage,
+// });
 
 require("./routes/auth.routes")(app);
 require("./routes/user.routes")(app);
 require("./routes/post.routes")(app);
+require("./routes/upload.routes")(app);
 require("./routes/foodfeed.routes")(app, pool);
 require("./routes/mymealposts.routes")(app, pool);
 require("./routes/myreservedfood.routes")(app, pool);
