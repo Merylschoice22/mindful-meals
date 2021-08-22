@@ -2,14 +2,13 @@ const { authJwt } = require("../middleware");
 
 module.exports = (app, pool) => {
   //GET my food posts that I have done based on my signed in ID
-  //Validate user is signed in
   app.get("/mymealposts/", authJwt.verifyToken, (req, res) => {
-    const userId = req.userId; //Get user ID
-    const query = `SELECT p.id, p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p WHERE p.user_id=${userId} order by p.post_date desc`;
+    const userId = req.userId;
+    const query = `SELECT u.username, p.reserved_by_user_id, p.id, p.title, p.loc_barrio, p.loc_street, p.description, p.post_date, p.phone, p.status FROM posts p INNER JOIN users u ON p.user_id=u.id WHERE p.user_id=${userId} order by p.created_at desc`;
+    //join table with user to get the reserved_by_user_id username
     pool
       .query(query)
       .then((result) => {
-        //Validate user is signed in
         res.json(result.rows);
       })
       .catch((error) => console.error(error));
@@ -17,12 +16,26 @@ module.exports = (app, pool) => {
 
   //PATCH - Mark collected - Update status from reserved to collected
   app.patch("/status-collected/:postId", authJwt.verifyToken, (req, res) => {
+    const userId = req.userId;
     const postId = req.params.postId;
     const query = "UPDATE posts SET status=$1 WHERE id=$2 and user_id=$3";
     pool
-      .query(query, ["collected", postId, req.userId])
+      .query(query, ["collected", postId, userId])
       .then(() => {
         res.status(200).send("Food successfully collected!");
+      })
+      .catch((error) => console.error(error));
+  });
+
+  //PATCH - Cancel a reservation - Update status from reserved to available
+  app.patch("/status-available/:postId", authJwt.verifyToken, (req, res) => {
+    const userId = req.userId;
+    const postId = req.params.postId;
+    const queryUPDATE = "UPDATE posts SET status=$1 WHERE id=$2 and user_id=$3";
+    pool
+      .query(queryUPDATE, ["available", postId, userId])
+      .then(() => {
+        res.status(200).send("Food is available again!");
       })
       .catch((error) => console.error(error));
   });
