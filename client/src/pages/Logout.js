@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../components/FoodPostForm.css";
 import "../components/Login.css";
 
 const Logout = () => {
-  //   const accessToken = localStorage.getItem("accessToken");
+  let history = useHistory();
   const logout = () => {
     localStorage.removeItem("accessToken");
+    history.push("/login");
   };
   return (
     <div id="container">
