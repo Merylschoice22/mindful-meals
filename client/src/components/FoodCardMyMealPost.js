@@ -45,13 +45,13 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
       })
       .catch((error) => console.error(error));
   };
-  let username = data.username;
-  if (!data.username) {
-    username = "No one, yet";
+  let username = "";
+  if (data) {
+    username = data.username;
   }
 
   if (!data) {
-    return <h3>Loading . . .</h3>;
+    return <h3> </h3>;
   }
   return (
     <div className="post">
@@ -65,7 +65,9 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
               alt=""
             ></img>
             {/* //This could be the user who reserved the food */}
-            <span className="post-username">Reserved by: {username}</span>
+            {data.username ? (
+              <span className="post-username">Reserved by: {username}</span>
+            ) : null}
           </div>
           <div className="post-top-right"></div>
           {/* This could be a relative time for when the post was reserved */}
