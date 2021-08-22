@@ -45,6 +45,11 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
       })
       .catch((error) => console.error(error));
   };
+  let username = data.username;
+  if (!data.username) {
+    username = "No one, yet";
+  }
+
   if (!data) {
     return <h3>Loading . . .</h3>;
   }
@@ -59,11 +64,12 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            {/* //This could be the user who reserved the food
-            <span className="post-username">{data.username}</span>  
-             */}
+            {/* //This could be the user who reserved the food */}
+            <span className="post-username">Reserved by: {username}</span>
           </div>
           <div className="post-top-right"></div>
+          {/* This could be a relative time for when the post was reserved */}
+          {/* <p className="post-username">{data.updated_at}</p> */}
         </div>
         <div className="post-center">
           <span className="post-description-title">{data.title}</span>
