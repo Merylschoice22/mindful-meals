@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import authAction from "../utils/authAction";
 import authFetch from "../utils/authFetch";
 import FoodCardMyMealPost from "../components/FoodCardMyMealPost";
 import Navbar from "../components/navbar-links/Navbar";
 import "../pages/FoodFeed.css";
 const MyFoodPosts = () => {
+  authAction();
+
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     authFetch("http://localhost:8080/mymealposts/")

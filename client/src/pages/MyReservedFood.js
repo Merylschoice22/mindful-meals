@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import authAction from "../utils/authAction";
 import authFetch from "../utils/authFetch";
 import MyReservedSection from "../components/MyReservedSection";
 import MyCollectedSection from "../components/MyCollectedSection";
@@ -6,6 +7,8 @@ import Navbar from "../components/navbar-links/Navbar";
 import "../pages/FoodFeed.css";
 
 const MyReservedFood = () => {
+  authAction();
+
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState("");
   useEffect(() => {

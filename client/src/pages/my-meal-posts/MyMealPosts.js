@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import FoodCardMyMealPost from "../../components/FoodCardMyMealPost";
+import authAction from "../../utils/authAction";
 import authFetch from "../../utils/authFetch";
 import SectionMyPosts from "./SectionMyPosts";
 import SectionMyPostHistory from "./SectionMyPostHistory";
 import Navbar from "../../components/navbar-links/Navbar";
 import "../FoodFeed.css";
 const MyMealPosts = () => {
+  authAction();
+
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState("");
   useEffect(() => {

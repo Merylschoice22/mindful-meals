@@ -11,8 +11,10 @@ import "./FoodFeed.css";
 // import FoodCard from "../components/FoodCard";
 import Footer from "../components/Footer";
 import "../components/Footer.css";
+import authAction from "../utils/authAction";
 
 const FoodFeed = () => {
+  authAction();
   //Get & Set data
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState(0);
@@ -26,8 +28,9 @@ const FoodFeed = () => {
       .catch((error) => console.error(error));
   }, [refresh]);
   if (!posts) {
-    return <h3></h3>;
+    return <h3> </h3>;
   }
+
   return (
     <div className="food-feed">
       <h1>Welcome to Mindful Meals</h1>
