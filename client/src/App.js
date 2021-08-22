@@ -9,6 +9,7 @@ import MyMealPosts from "./pages/my-meal-posts/MyMealPosts";
 import MyReservedFood from "./pages/MyReservedFood";
 import "./index.css";
 import "./App.css";
+import Logout from "./pages/Logout";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" exact component={FoodFeed} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
+          <Route path="/logout" exact component={Logout} />
           <Route path="/post" exact component={CreateFoodPost} />
           <Route path="/reserve" exact component={FoodPostCard} />
           <Route path="/my-meal-posts" exact component={MyMealPosts} />

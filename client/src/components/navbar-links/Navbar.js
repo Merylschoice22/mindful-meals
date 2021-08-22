@@ -25,7 +25,10 @@ const Navbar = () => {
         Register
       </Link>
       <Link to="/login" className="navbar-link-login">
-        Login
+        Log in
+      </Link>
+      <Link to="/logout" className="navbar-link-login">
+        Log out
       </Link>
       <DropdownMenu />
     </div>
