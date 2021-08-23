@@ -1,5 +1,5 @@
 import React from "react";
-import FoodCardCollected from "./FoodCardCollected";
+import FoodCardCollected from "../../components/FoodCardCollected";
 const MyCollectedSection = ({ postsData }) => {
   return (
     <div>
