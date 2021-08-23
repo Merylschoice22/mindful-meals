@@ -64,7 +64,6 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            {/* //This could be the user who reserved the food */}
             {data.username ? (
               <span className="post-username">Reserved by: {username}</span>
             ) : null}
