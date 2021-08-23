@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import FoodCard from "./FoodCard";
+import FoodCard from "./food-cards/FoodCard";
 import LoadingButton from "./LoadingButton";
-import "./FoodPostCard.css";
+import "./food-cards/FoodPostCard.css";
 import "./ReservedPopup.css";
 
 const FoodPosts = ({ posts, setRefresh }) => {

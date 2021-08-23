@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReservedPopup from "./ReservedPopup";
+import ReservedPopup from "../ReservedPopup";
 import PopupInput from "./PopupInput";
 import moment from "moment";
 import "./FoodPostCard.css";
