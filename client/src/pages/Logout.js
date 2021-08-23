@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import "../components/Login.css";
+import "./Login.css";
 
 const Logout = () => {
   let history = useHistory();
