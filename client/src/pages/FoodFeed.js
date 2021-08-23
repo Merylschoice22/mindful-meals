@@ -3,10 +3,8 @@ import authFetch from "../utils/authFetch";
 import Navbar from "../components/navbar-links/Navbar";
 import CreateFoodPost from "../components/CreateFoodPost";
 import FoodPosts from "../components/FoodPosts";
-//import LoadingButton from "../components/LoadingButton";
-import "./FoodFeed.css";
-// import FoodCard from "../components/FoodCard";
 import Footer from "../components/Footer";
+import "./FoodFeed.css";
 import "../components/Footer.css";
 
 const FoodFeed = () => {
