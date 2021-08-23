@@ -154,11 +154,11 @@ const initialPostsTable = () => {
 };
 
 // method to generate database tables.
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-//   initial();
-//   initialPostsTable();
-// });
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+  initial();
+  initialPostsTable();
+});
 
 //here must be placed the website url/frontend
 var corsOptions = {
