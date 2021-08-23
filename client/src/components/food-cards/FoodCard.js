@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReservedPopup from "../ReservedPopup";
-import PopupInput from "./PopupInput";
+import PopupInput from "../PopupInput";
 import moment from "moment";
 import "./FoodPostCard.css";
-import "./ReservedPopup.css";
-import "./PopupInput.css";
+import "../ReservedPopup.css";
+import "../PopupInput.css";
 
 const FoodCard = ({ postData, setRefresh }) => {
   const [isOpen, setIsOpen] = useState(false);

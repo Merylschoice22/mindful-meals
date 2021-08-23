@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import authFetch from "../utils/authFetch";
-import BtnStatusAvailable from "../buttons/BtnStatusAvailable";
-import BtnStatusCollected from "../buttons/BtnStatusCollected";
+import authFetch from "../../utils/authFetch";
+import BtnStatusAvailable from "../../buttons/BtnStatusAvailable";
+import BtnStatusCollected from "../../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";
 
 const FoodCardMyMealPost = ({ postData, setRefresh }) => {

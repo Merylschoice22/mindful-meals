@@ -1,5 +1,5 @@
 import React from "react";
-import FoodCardCollected from "../../components/FoodCardCollected";
+import FoodCardCollected from "../../components/food-cards/FoodCardCollected";
 
 const SectionMyPostHistory = ({ postsData }) => {
   return (

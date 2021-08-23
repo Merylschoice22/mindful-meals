@@ -4,7 +4,7 @@ import authFetch from "../../utils/authFetch";
 import MyReservedSection from "./MyReservedSection";
 import MyCollectedSection from "./MyCollectedSection";
 import Navbar from "../../components/navbar-links/Navbar";
-import "../pages/FoodFeed.css";
+import "../FoodFeed.css";
 
 const MyReservedFood = () => {
   authAction();

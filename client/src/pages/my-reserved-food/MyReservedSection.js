@@ -1,5 +1,5 @@
 import React from "react";
-import FoodCardMyReserved from "../../components/FoodCardMyReserved.js";
+import FoodCardMyReserved from "../../components/food-cards/FoodCardMyReserved.js";
 
 const MyReservedSection = ({ postsData, setRefresh }) => {
   return (

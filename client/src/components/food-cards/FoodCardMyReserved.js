@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import authFetch from "../utils/authFetch";
-import BtnCancelReservation from "../buttons/BtnCancelReservation";
+import authFetch from "../../utils/authFetch";
+import BtnCancelReservation from "../../buttons/BtnCancelReservation";
 import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData, setRefresh }) => {
