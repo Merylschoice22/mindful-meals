@@ -3,7 +3,6 @@ import authFetch from "../utils/authFetch";
 import Navbar from "../components/navbar-links/Navbar";
 import CreateFoodPost from "../components/CreateFoodPost";
 import FoodPosts from "../components/FoodPosts";
-//import ExtraFoodCardTwo from "./ExtraFoodCardTwo";
 //import LoadingButton from "../components/LoadingButton";
 import "./FoodFeed.css";
 // import FoodCard from "../components/FoodCard";
