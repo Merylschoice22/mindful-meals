@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
 import MyMealPosts from "./pages/my-meal-posts/MyMealPosts";
-import MyReservedFood from "./pages/MyReservedFood";
+import MyReservedFood from "./pages/my-reserved-food/MyReservedFood";
 import "./index.css";
 import "./App.css";
 import Logout from "./pages/Logout";
