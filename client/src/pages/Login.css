@@ -128,7 +128,8 @@ input {
   font-size: 14px;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "Julius Sans One", sans-serif !important;
 }
 

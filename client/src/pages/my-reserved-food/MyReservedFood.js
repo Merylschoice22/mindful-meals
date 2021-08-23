@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import MyReservedSection from "../components/MyReservedSection";
-import MyCollectedSection from "../components/MyCollectedSection";
-import Navbar from "../components/navbar-links/Navbar";
-import "../pages/FoodFeed.css";
+import authAction from "../../utils/authAction";
+import authFetch from "../../utils/authFetch";
+import MyReservedSection from "./MyReservedSection";
+import MyCollectedSection from "./MyCollectedSection";
+import Navbar from "../../components/navbar-links/Navbar";
+import "../FoodFeed.css";
 
 const MyReservedFood = () => {
+  authAction();
+
   const [posts, setPosts] = useState([]);
   const [refresh, setRefresh] = useState("");
   useEffect(() => {
-    fetch(`http://localhost:8080/myreservedposts/:userId`)
-      //set with current logged in user ID
+    authFetch(`http://localhost:8080/myreservedposts/`)
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);

@@ -13,7 +13,9 @@ const FoodCardCollected = ({ postData }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            <span className="post-username">{postData.username}</span>
+            <span className="post-username">
+              Reserved by: {postData.username}
+            </span>
           </div>
           <div className="post-top-right"></div>
         </div>

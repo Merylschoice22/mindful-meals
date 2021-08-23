@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import BtnStatusAvailable from "../buttons/BtnStatusAvailable";
-import BtnStatusCollected from "../buttons/BtnStatusCollected";
+import authFetch from "../../utils/authFetch";
+import BtnStatusAvailable from "../../buttons/BtnStatusAvailable";
+import BtnStatusCollected from "../../buttons/BtnStatusCollected";
 import "./FoodCardMyMealPost.css";
 
 const FoodCardMyMealPost = ({ postData, setRefresh }) => {
   const [data, setData] = useState(postData);
   const markAvailable = () => {
-    fetch(`http://localhost:8080/status-available/${postData.id}`, {
+    authFetch(`http://localhost:8080/status-available/${postData.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         completed: true,
@@ -26,7 +27,7 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
   };
 
   const markCollected = () => {
-    fetch(`http://localhost:8080/status-collected/${postData.id}`, {
+    authFetch(`http://localhost:8080/status-collected/${postData.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         completed: true,
@@ -44,8 +45,13 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
       })
       .catch((error) => console.error(error));
   };
+  let username = "";
+  if (data) {
+    username = data.username;
+  }
+
   if (!data) {
-    return <h3>Loading . . .</h3>;
+    return <h3> </h3>;
   }
   return (
     <div className="post">
@@ -58,11 +64,13 @@ const FoodCardMyMealPost = ({ postData, setRefresh }) => {
               src="https://cdn.dribbble.com/users/77224/screenshots/5601119/reading_dribbble_03.png?compress=1&resize=800x600"
               alt=""
             ></img>
-            {/* //This could be the user who reserved the food
-            <span className="post-username">{data.username}</span>  
-             */}
+            {data.username ? (
+              <span className="post-username">Reserved by: {username}</span>
+            ) : null}
           </div>
           <div className="post-top-right"></div>
+          {/* This could be a relative time for when the post was reserved */}
+          {/* <p className="post-username">{data.updated_at}</p> */}
         </div>
         <div className="post-center">
           <span className="post-description-title">{data.title}</span>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/FoodCardMyReserved.css";
+import "../components/food-cards/FoodCardMyReserved.css";
 
 const BtnCancelReservation = ({ handleClick }) => {
   return (

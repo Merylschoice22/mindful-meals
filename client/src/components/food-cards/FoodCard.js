@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ReservedPopup from "./ReservedPopup";
-import PopupInput from "./PopupInput";
+import ReservedPopup from "../ReservedPopup";
+import PopupInput from "../PopupInput";
 import moment from "moment";
 import "./FoodPostCard.css";
-import "./ReservedPopup.css";
-import "./PopupInput.css";
+import "../ReservedPopup.css";
+import "../PopupInput.css";
 
 const FoodCard = ({ postData, setRefresh }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,12 +55,6 @@ const FoodCard = ({ postData, setRefresh }) => {
               handleClose={togglePopup}
             />
           )}
-
-          {/* <ReservedPopup
-            trigger={buttonPopup}
-            setTrigger={setButtonPopup}
-            postData={postData}
-          ></ReservedPopup> */}
           <br></br>
         </div>
       </div>

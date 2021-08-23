@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import BtnCancelReservation from "../buttons/BtnCancelReservation";
+import authFetch from "../../utils/authFetch";
+import BtnCancelReservation from "../../buttons/BtnCancelReservation";
 import "./FoodCardMyReserved.css";
 
 const FoodCardMyReserved = ({ postData, setRefresh }) => {
   const [data, setData] = useState(postData);
   const handleCancel = () => {
-    fetch(`http://localhost:8080/status-available/${postData.id}`, {
+    authFetch(`http://localhost:8080/status-cancel-res/${postData.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         completed: true,

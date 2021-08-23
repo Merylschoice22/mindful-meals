@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import authFetch from "../utils/authFetch";
 import "./Login.css";
 
 export default class Login extends Component {
@@ -25,7 +26,7 @@ export default class Login extends Component {
 
   login(event) {
     event.preventDefault();
-    fetch("http://localhost:8080/api/auth/signin", {
+    authFetch("http://localhost:8080/api/auth/signin", {
       //to specify what the backend expest to receive
       headers: {
         "Content-Type": "application/json",
@@ -36,8 +37,12 @@ export default class Login extends Component {
         password: this.state.password,
       }),
     }).then((result) => {
-      if (result.status === 200) this.props.history.push("/");
-      else
+      if (result.status === 200) {
+        result.json().then((body) => {
+          localStorage.setItem("accessToken", body.accessToken);
+          this.props.history.push("/");
+        });
+      } else
         alert(
           "Sorry! Something was incorrect. Please check the information you have typed and try again!"
         );

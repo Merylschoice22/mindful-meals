@@ -17,6 +17,7 @@ exports.postfood = (req, res) => {
     phone: req.body.phone,
     description: req.body.description,
     status: req.body.status,
+    user_id: req.userId,
   })
     .then((post) => {
       res.send(post);

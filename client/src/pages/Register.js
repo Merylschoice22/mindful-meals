@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Form.css";
+import "../components/Form.css";
 
 //const Register = () => {
 export default class Register extends Component {

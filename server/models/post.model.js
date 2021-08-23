@@ -27,8 +27,12 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
       },
       status: {
-        type: Sequelize.ENUM("available", "reserved", "collected"),
+        type: Sequelize.STRING,
         defaultValue: "available",
+      },
+      reserved_by_user_id: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
       },
     },
     { underscored: true }
