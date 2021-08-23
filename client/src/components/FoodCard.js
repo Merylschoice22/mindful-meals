@@ -55,12 +55,6 @@ const FoodCard = ({ postData, setRefresh }) => {
               handleClose={togglePopup}
             />
           )}
-
-          {/* <ReservedPopup
-            trigger={buttonPopup}
-            setTrigger={setButtonPopup}
-            postData={postData}
-          ></ReservedPopup> */}
           <br></br>
         </div>
       </div>
