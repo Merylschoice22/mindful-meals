@@ -4,7 +4,6 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import CreateFoodPost from "./components/CreateFoodPost";
 import FoodFeed from "./pages/FoodFeed";
-import FoodPostCard from "./components/FoodPostCard";
 import MyMealPosts from "./pages/my-meal-posts/MyMealPosts";
 import MyReservedFood from "./pages/MyReservedFood";
 import "./index.css";
@@ -26,7 +25,6 @@ const App = () => {
           <Route path="/logout" exact component={Logout} />
           <Route path="/unauth" exact component={Unauth} />
           <Route path="/post" exact component={CreateFoodPost} />
-          <Route path="/reserve" exact component={FoodPostCard} />
           <Route path="/my-meal-posts" exact component={MyMealPosts} />
           <Route path="/my-reserved-food" exact component={MyReservedFood} />
         </Switch>
